@@ -1,0 +1,8 @@
+#paneFundo{
+    -fx-background-image:url("../../../f2.jpg");
+    -fx-background-size:cover;
+    -fx-background-position:center;
+    -fx-background-repeat:no-repeat;
+
+
+}

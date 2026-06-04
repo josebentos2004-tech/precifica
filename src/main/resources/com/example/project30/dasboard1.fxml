@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.*?>
+
+<BorderPane prefHeight="600" prefWidth="800" stylesheets="@dasboard1.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.DashboardController">
+
+
+    <center>
+        <StackPane fx:id="conteudoDinamico" alignment="TOP_LEFT" styleClass="">
+            <children>
+
+                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent; -fx-padding: 0;" vbarPolicy="AS_NEEDED">
+                    <content>
+                        <VBox alignment="TOP_LEFT" spacing="30" style="-fx-padding: 35;">
+
+                            <HBox alignment="CENTER_LEFT" spacing="20">
+                                <VBox spacing="5" HBox.hgrow="ALWAYS">
+                                    <Label fx:id="name" styleClass="header-title" text="Bem-vindo, Gelson 👋" />
+                                    <Label styleClass="header-subtitle" text="Controle os seus preços e aumente o lucro." />
+                                </VBox>
+                                <VBox alignment="TOP_RIGHT" spacing="5" style="-fx-padding: 0 20 0 0;">
+                                    <Label fx:id="nif" styleClass="header-nif" text="NIF: 009090961BG" />
+                                    <Label styleClass="header-plano" text="Plano: Gratuito" />
+                                </VBox>
+                            </HBox>
+
+                            <HBox alignment="CENTER_LEFT" spacing="20">
+                                <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                                    <FontIcon iconColor="#2563EB" iconLiteral="bi-box-seam" iconSize="24" />
+                                    <Label styleClass="card-dashboard-title" text="Produtos" />
+                                    <Label styleClass="card-value" text="20" />
+                                </VBox>
+
+                                <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                                    <FontIcon iconColor="#22C55E" iconLiteral="bi-graph-up" iconSize="24" />
+                                    <Label styleClass="card-dashboard-title" text="Lucro Estimado" />
+                                    <Label styleClass="card-value" text="250.000 kz" />
+                                </VBox>
+
+                                <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                                    <FontIcon iconColor="#F59E0B" iconLiteral="bi-wallet2" iconSize="24" />
+                                    <Label styleClass="card-dashboard-title" text="Custos Fixos" />
+                                    <Label styleClass="card-value" text="100.000 kz" />
+                                </VBox>
+
+                                <VBox maxWidth="1.7976931348623157E308" styleClass="card-alert-dashboard" HBox.hgrow="ALWAYS">
+                                    <FontIcon iconColor="#EF4444" iconLiteral="bi-exclamation-triangle" iconSize="24" />
+                                    <Label styleClass="card-dashboard-title" text="Alertas" />
+                                    <Label styleClass="card-value" text="3" />
+                                </VBox>
+                            </HBox>
+
+                            <VBox spacing="15">
+                                <Label styleClass="section-title" text="Ações rápidas" />
+                                <HBox alignment="CENTER_LEFT" spacing="15">
+                                    <Button styleClass="action-button" text="Novo Produto">
+                                        <graphic><FontIcon iconLiteral="bi-plus-circle" iconSize="18" /></graphic>
+                                    </Button>
+                                    <Button styleClass="action-button" text="Calcular Preço">
+                                        <graphic><FontIcon iconLiteral="bi-calculator" iconSize="18" /></graphic>
+                                    </Button>
+                                    <Button styleClass="action-button" text="Relatório">
+                                        <graphic><FontIcon iconLiteral="bi-file-earmark-text" iconSize="18" /></graphic>
+                                    </Button>
+                                </HBox>
+                            </VBox>
+
+                            <VBox maxWidth="500" spacing="12" styleClass="card-resumo">
+                                <Label styleClass="section-title-resumo" text="Resumo de Precificação" />
+                                <VBox spacing="8" style="-fx-padding: 5 0 0 5;">
+                                    <Label styleClass="resumo-item" text="• Arroz 25kg → margem baixa" />
+                                    <Label styleClass="resumo-item" text="• Refrigerante → preço abaixo do custo" />
+                                    <Label styleClass="resumo-item" text="• Sabão → lucro ideal" />
+                                </VBox>
+                            </VBox>
+
+                        </VBox>
+                    </content>
+                </ScrollPane>
+
+            </children>
+        </StackPane>
+    </center>
+</BorderPane>

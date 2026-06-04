@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+<?import javafx.scene.image.*?>
+
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela3.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela3"> <Label styleClass="flow-title" text="Fluxo: Produtor" />
+
+    <HBox alignment="TOP_LEFT" spacing="30" VBox.vgrow="ALWAYS">
+        <children>
+
+            <VBox maxWidth="650" spacing="20" styleClass="form-card" HBox.hgrow="ALWAYS">
+                <children>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 10 0; -fx-border-color: #F1F5F9; -fx-border-width: 0 0 1px 0;">
+                        <children>
+                            <FontIcon iconColor="#081B5F" iconLiteral="bi-tools" iconSize="20" />
+                            <Label styleClass="form-card-title" text="Custos de Production" />
+                        </children>
+                    </HBox>
+
+                    <GridPane hgap="20" vgap="15">
+                        <columnConstraints>
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                            <ColumnConstraints hgrow="ALWAYS" minWidth="10.0" prefWidth="100.0" />
+                        </columnConstraints>
+                        <rowConstraints>
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                            <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                        </rowConstraints>
+                        <children>
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="input-label" text="Matéria-Prima" />
+                                    <TextField fx:id="txtMateriaPrima" styleClass="custom-text-field" promptText="Ex: Insumos, materiais" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="0">
+                                <children>
+                                    <Label styleClass="input-label" text="Mão de Obra" />
+                                    <TextField fx:id="txtMaoDeObra" styleClass="custom-text-field" promptText="Ex: Salários de produção" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="0" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="input-label" text="GGF (Energia/Gás)" />
+                                    <TextField fx:id="txtGgf" styleClass="custom-text-field" promptText="Custos gerais de fábrica" />
+                                </children>
+                            </VBox>
+
+                            <VBox spacing="6" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                <children>
+                                    <Label styleClass="input-label" text="Serv. Terceiros" />
+                                    <TextField fx:id="txtServTerceiros" styleClass="custom-text-field" promptText="Serviços terceirizados" />
+                                </children>
+                            </VBox>
+
+                        </children>
+                    </GridPane>
+
+                    <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 20 0 0 0;">
+                        <children>
+                            <Button fx:id="btnAnterior" onAction="#aoClicarAnterior" styleClass="nav-button-secondary" text="Anterior">
+                                <graphic>
+                                    <FontIcon iconColor="#475569" iconLiteral="bi-arrow-left" iconSize="14" />
+                                </graphic>
+                            </Button>
+
+                            <Region HBox.hgrow="ALWAYS" />
+
+                            <Button fx:id="btnSeguinte" onAction="#aoClicarSeguinte" styleClass="submit-button" text="Seguinte">
+                                <graphic>
+                                    <FontIcon iconColor="white" iconLiteral="bi-arrow-right" iconSize="14" />
+                                </graphic>
+                            </Button>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+
+            <VBox alignment="CENTER" maxWidth="450" styleClass="image-card" HBox.hgrow="ALWAYS">
+                <children>
+                    <ImageView fitHeight="280.0" fitWidth="280.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../maney.jpg"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+
+        </children>
+    </HBox>
+</VBox>

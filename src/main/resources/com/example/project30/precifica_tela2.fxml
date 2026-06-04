@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela2.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela2">
+
+    <Label styleClass="flow-title" text="Fluxo: Comerciante" />
+
+    <HBox alignment="TOP_LEFT" spacing="30" VBox.vgrow="ALWAYS">
+        <children>
+
+            <VBox maxWidth="550" spacing="20" styleClass="form-card" HBox.hgrow="ALWAYS">
+                <children>
+
+                    <HBox alignment="CENTER_LEFT" spacing="10" style="-fx-padding: 0 0 10 0; -fx-border-color: #F1F5F9; -fx-border-width: 0 0 1px 0;">
+                        <children>
+                            <FontIcon iconColor="#081B5F" iconLiteral="bi-cart-fill" iconSize="20" />
+                            <Label styleClass="form-card-title" text="Custos de Aquisição" />
+                        </children>
+                    </HBox>
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Custo Unitário de Compra (Fornecedor)" />
+                            <TextField fx:id="txtCustoCompra" promptText="Ex: 1.500,00" styleClass="custom-text-field" />
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Transporte / Frete" />
+                            <TextField fx:id="txtFrete" promptText="Custo de logística" styleClass="custom-text-field" />
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Embalagens e Outros" />
+                            <TextField fx:id="txtEmbalagem" promptText="Custos adicionais" styleClass="custom-text-field" />
+                        </children>
+                    </VBox>
+
+                    <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 15 0 0 0;">
+                        <children>
+                            <Button fx:id="btnAnterior" onAction="#aoClicarAnterior" styleClass="nav-button-secondary" text="Anterior">
+                                <graphic>
+                                    <FontIcon iconColor="#475569" iconLiteral="bi-arrow-left" iconSize="14" />
+                                </graphic>
+                            </Button>
+
+                            <Region HBox.hgrow="ALWAYS" />
+
+                            <Button fx:id="btnSeguinte" onAction="#aoClicarSeguinte" styleClass="nav-button-primary" text="Seguinte">
+                                <graphic>
+                                    <FontIcon iconColor="white" iconLiteral="bi-arrow-right" iconSize="14" />
+                                </graphic>
+                            </Button>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+
+            <VBox alignment="CENTER" maxWidth="450" styleClass="image-card" HBox.hgrow="ALWAYS">
+                <children>
+                    <ImageView fitHeight="256.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../../maney.jpg"/>
+                        </image>
+                    </ImageView>
+                </children>
+            </VBox>
+
+        </children>
+    </HBox>
+</VBox>

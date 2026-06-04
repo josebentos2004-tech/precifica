@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela4.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela4">
+
+    <Label styleClass="flow-title" text="Definição de Lucro" />
+
+    <HBox alignment="TOP_LEFT" spacing="30" VBox.vgrow="ALWAYS">
+        <children>
+
+            <VBox maxWidth="550" spacing="22" styleClass="form-card" HBox.hgrow="ALWAYS">
+                <children>
+
+                    <Label styleClass="form-card-title-lucro" text="Quanto você quer ganhar?" />
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Margem de Lucro Desejada (%)" />
+                            <TextField fx:id="txtMargemLucro" styleClass="custom-text-field" promptText="Ex: 30" />
+                            <Label styleClass="input-help-text" text="Este valor será usado para calcular o Markup." />
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Preço de Mercado (Opcional)" />
+                            <TextField fx:id="txtPrecoMercado" styleClass="custom-text-field" promptText="Preço do concorrente" />
+                        </children>
+                    </VBox>
+
+                    <HBox alignment="CENTER_RIGHT" spacing="15" style="-fx-padding: 15 0 0 0;">
+                        <children>
+                            <Button fx:id="btnAnterior" onAction="#aoClicarAnterior" styleClass="nav-button-secondary" text="Anterior">
+                                <graphic>
+                                    <FontIcon iconColor="#475569" iconLiteral="bi-arrow-left" iconSize="14" />
+                                </graphic>
+                            </Button>
+
+                            <Region HBox.hgrow="ALWAYS" />
+
+                            <Button fx:id="btnSubmeter" onAction="#SubmeterLucro" styleClass="submit-button" text="Calcular Preço Final">
+                                <graphic>
+                                    <FontIcon iconColor="white" iconLiteral="bi-check-circle" iconSize="14" />
+                                </graphic>
+                            </Button>
+                        </children>
+                    </HBox>
+
+                </children>
+            </VBox>
+
+            <VBox alignment="CENTER" maxWidth="450" styleClass="info-dashed-card" HBox.hgrow="ALWAYS">
+                <children>
+                    <VBox alignment="CENTER" spacing="15" style="-fx-padding: 30;">
+                        <children>
+                            <FontIcon iconColor="#081B5F" iconLiteral="bi-bullseye" iconSize="42" />
+
+                            <Label styleClass="dashed-card-title" text="Ponto de Equilíbrio" />
+
+                            <Label alignment="CENTER" textAlignment="CENTER" wrapText="true" styleClass="dashed-card-text"
+                                   text="O sistema avisa se a sua margem está abaixo da média do setor para garantir a sustentabilidade do negócio." />
+                        </children>
+                    </VBox>
+                </children>
+            </VBox>
+
+        </children>
+    </HBox>
+</VBox>

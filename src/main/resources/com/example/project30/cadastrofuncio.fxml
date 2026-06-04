@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" minHeight="-Infinity" minWidth="-Infinity" prefHeight="526.0" prefWidth="1034.0" style="-fx-background-color: white;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.CadastrofuncioController">
+
+   <children>
+      <Pane layoutX="572.0" layoutY="51.0" prefHeight="463.0" prefWidth="377.0">
+         <children>
+            <Pane layoutX="31.0" layoutY="91.0" prefHeight="34.0" prefWidth="285.0">
+               <children>
+                  <TextField fx:id="email" layoutX="-13.0" layoutY="-6.0" prefHeight="40.0" prefWidth="346.0" promptText="E-mail de Acesso" />
+               </children></Pane>
+            <TextField fx:id="username" layoutX="19.0" layoutY="31.0" prefHeight="40.0" prefWidth="346.0" promptText="Nome Completo" />
+            <TextField fx:id="nif" layoutX="19.0" layoutY="139.0" prefHeight="40.0" prefWidth="346.0" promptText="NIF" />
+            <TextField fx:id="s1" layoutX="19.0" layoutY="193.0" prefHeight="40.0" prefWidth="346.0" promptText="Senha" />
+            <TextField fx:id="s2" layoutX="19.0" layoutY="253.0" prefHeight="40.0" prefWidth="346.0" promptText="Confirmar Senha" />
+            <Hyperlink layoutX="93.0" layoutY="359.0" onAction="#fazerLogin" prefHeight="23.0" prefWidth="198.0" text="Já possui uma Conta, Faça o Login" textAlignment="CENTER" textFill="#4362ff" visited="true" wrapText="true" />
+            <Button alignment="TOP_CENTER" layoutX="19.0" layoutY="316.0" mnemonicParsing="false" onAction="#cadastrar" prefHeight="34.0" prefWidth="346.0" style="-fx-background-color: green;" text="Cadastrar" textFill="WHITE">
+               <font>
+                  <Font name="Arial Black" size="13.0" />
+               </font>
+            </Button>
+            <Text fill="#110a51" fontSmoothingType="LCD" layoutX="22.0" layoutY="20.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Registar Comerciantes">
+               <font>
+                  <Font name="Arial Black" size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </Pane>
+      <ImageView fitHeight="658.0" fitWidth="542.0" layoutX="-4.0" layoutY="-130.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../fotos/login.png" />
+         </image>
+      </ImageView>
+   </children>
+</AnchorPane>

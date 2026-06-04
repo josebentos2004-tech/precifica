@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<BorderPane xmlns="http://javafx.com/javafx/8"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project30.preficica_tela1"
+            stylesheets="@precifica_tela1.css"
+            prefHeight="600.0" prefWidth="900.0">
+
+    <!-- CONTEÚDO PRINCIPAL (Baseado na imagem "sns.jpg") -->
+    <center>
+        <VBox spacing="30" styleClass="main-container">
+
+            <!-- Título da Etapa -->
+            <Label text="Etapa 1: Identificação" styleClass="step-title"/>
+
+            <HBox spacing="30" alignment="CENTER_LEFT">
+
+                <!-- CARD DA ESQUERDA: PERGUNTA E SELEÇÃO -->
+                <VBox spacing="25" styleClass="card-left">
+
+                    <VBox spacing="5">
+                        <Label text="O que você faz?" styleClass="question-title"/>
+                        <Label text="O sistema adapta todos os campos com base na sua atividade econômica." styleClass="question-subtitle" wrapText="true"/>
+                    </VBox>
+
+                    <!-- Opções de Seleção (Comerciante / Produtor) -->
+                    <HBox spacing="15">
+
+                        <!-- Opção Selecionada: Comerciante -->
+                        <VBox fx:id="btnComerciante"  onMouseClicked="#clicouComerciante" alignment="CENTER" spacing="12" styleClass="option-card, option-unselected">
+                            <FontIcon iconLiteral="bi-shop" iconSize="34" iconColor="#0F172A"/>
+                            <Label text="Comerciante" styleClass="option-title-active"/>
+                            <Label text="Compro e vendo pronto" styleClass="option-subtitle" wrapText="true" alignment="CENTER"/>
+                        </VBox>
+
+                        <!-- Opção Não Selecionada: Produtor -->
+                        <VBox fx:id="btnProdutor" onMouseClicked="#clicouProdutor" alignment="CENTER" spacing="12" styleClass="option-card, option-unselected">
+                            <FontIcon iconLiteral="bi-building" iconSize="34" iconColor="#94A3B8"/>
+                            <Label text="Produtor" styleClass="option-title-inactive"/>
+                            <Label text="Transformo matéria-prima" styleClass="option-subtitle" wrapText="true" alignment="CENTER"/>
+                        </VBox>
+
+                    </HBox>
+                </VBox>
+
+                <!-- CARD DA DIREITA: INFORMAÇÃO COMPLEMENTAR -->
+                <VBox alignment="CENTER" spacing="15" styleClass="card-right">
+                    <FontIcon iconLiteral="bi-shield-check" iconSize="52" iconColor="#0EA5E9"/>
+
+                    <Label text="Base de Dados Única" styleClass="info-title"/>
+                    <Label text="Cada produto registado gera um ID único ligado ao seu inventário e precificação dinâmica."
+                           styleClass="info-subtitle"
+                           wrapText="true"
+                           alignment="CENTER"
+                           textAlignment="CENTER"/>
+                </VBox>
+
+            </HBox>
+        </VBox>
+    </center>
+</BorderPane>
