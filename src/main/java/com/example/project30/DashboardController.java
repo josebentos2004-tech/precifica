@@ -16,40 +16,9 @@ import java.io.IOException;
 
 public class DashboardController {
 
-    // Só precisamos do ID do painel onde a tela vai aparecer
     @FXML
     private StackPane conteudoDinamico;
 
-    // Método direto que o botão vai chamar
-    @FXML
-    private void abrirTelaPrecificacao() {
-        try {
-            // 1. Carrega a tela diretamente
-            Parent novaTela = FXMLLoader.load(getClass().getResource("precifica_tela1.fxml"));
-
-            // 2. Limpa o painel e joga a nova tela lá dentro
-            conteudoDinamico.getChildren().clear();
-            conteudoDinamico.getChildren().add(novaTela);
-
-        } catch (IOException e) {
-            System.err.println("Erro ao mudar de tela: " + e.getMessage());
-        }
-    }
-
-    @FXML
-    private void abrirDashboard() {
-        try {
-            // 1. Carrega a tela diretamente
-            Parent novaTela = FXMLLoader.load(getClass().getResource("dasboard1.fxml"));
-
-            // 2. Limpa o painel e joga a nova tela lá dentro
-            conteudoDinamico.getChildren().clear();
-            conteudoDinamico.getChildren().add(novaTela);
-
-        } catch (IOException e) {
-            System.err.println("Erro ao mudar de tela: " + e.getMessage());
-        }
-    }
     @FXML
     private Label name;
 
@@ -65,8 +34,40 @@ public class DashboardController {
     }
 
     @FXML
+    private void abrirTelaPrecificacao() {
+        try {
+            Parent novaTela = FXMLLoader.load(getClass().getResource("precifica_tela1.fxml"));
+            conteudoDinamico.getChildren().clear();
+            conteudoDinamico.getChildren().add(novaTela);
+        } catch (IOException e) {
+            System.err.println("Erro ao mudar de tela: " + e.getMessage());
+        }
+    }
+
+    @FXML
+    private void abrirproduto() {
+        try {
+            Parent novaTela = FXMLLoader.load(getClass().getResource("produto_total.fxml"));
+            conteudoDinamico.getChildren().clear();
+            conteudoDinamico.getChildren().add(novaTela);
+        } catch (IOException e) {
+            System.err.println("Erro ao mudar de tela: " + e.getMessage());
+        }
+    }
+
+    @FXML
+    private void abrirDashboard() {
+        try {
+            Parent novaTela = FXMLLoader.load(getClass().getResource("dasboard1.fxml"));
+            conteudoDinamico.getChildren().clear();
+            conteudoDinamico.getChildren().add(novaTela);
+        } catch (IOException e) {
+            System.err.println("Erro ao mudar de tela: " + e.getMessage());
+        }
+    }
+
+    @FXML
     private void logoutL(ActionEvent event) {
-        // Criar diálogo de confirmação com dois botões
         CommandLinksDialog dialog = new CommandLinksDialog(
                 new CommandLinksButtonType("Sim, terminar sessão", true),
                 new CommandLinksButtonType("Não, continuar", false)
@@ -78,22 +79,16 @@ public class DashboardController {
         dialog.showAndWait().ifPresent(result -> {
             if (result.getText().startsWith("Sim")) {
                 try {
-                    // Destruir dados do usuário
                     this.user = null;
-
-                    // Redirecionar para tela de login
                     FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
                     Parent root = loader.load();
-
                     Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
                     stage.setScene(new Scene(root));
                     stage.show();
-
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         });
     }
-
 }

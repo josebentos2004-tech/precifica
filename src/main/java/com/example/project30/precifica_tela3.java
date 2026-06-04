@@ -84,7 +84,8 @@ public class precifica_tela3 {
         try {
             StackPane conteudo = (StackPane) btnSeguinte.getScene().lookup("#conteudoDinamico");
             if (conteudo != null) {
-                conteudo.getChildren().setAll(FXMLLoader.load(getClass().getResource("/com/example/project30/precifica_tela4.fxml")));
+                Parent tela4 = FXMLLoader.load(getClass().getResource("/com/example/project30/precifica_tela4.fxml"));
+                conteudo.getChildren().setAll(tela4);
             }
         } catch (IOException e) {
             new Alert(Alert.AlertType.ERROR, "Erro: " + e.getMessage()).showAndWait();

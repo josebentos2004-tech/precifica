@@ -1,0 +1,161 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS
+   ========================================================================== */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-background-color: #f8fafc;
+}
+
+/* Banner Superior */
+.header-banner {
+    -fx-background-color: #0b2861;
+    -fx-background-radius: 0 0 12px 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(11, 40, 97, 0.12), 12, 0, 0, 4);
+}
+.header-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.header-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #94a3b8;
+}
+.icon-kz-main {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-max-width: 36;
+    -fx-max-height: 36;
+}
+.icon-kz-text {
+    -fx-text-fill: #0b2861;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Títulos de Seções */
+.section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1e293b;
+}
+
+/* ==========================================================================
+   CARDS DE INDICADORES (DESIGN EM CSS PURO)
+   ========================================================================== */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 16px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 8, 0, 0, 2);
+}
+.card-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #64748b;
+    -fx-font-weight: bold;
+}
+.card-number {
+    -fx-font-size: 16px;
+    -fx-text-fill: #0f172a;
+    -fx-font-weight: bold;
+}
+
+/* Badges CSS que substituem os ícones antigos */
+.card-badge {
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-max-width: 34;
+    -fx-max-height: 34;
+    -fx-background-radius: 8px;
+}
+.badge-text {
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Variações de Cores dos Badges */
+.badge-blue {
+    -fx-background-color: #e0f2fe;
+}
+.badge-blue .badge-text {
+    -fx-text-fill: #0369a1;
+}
+
+.badge-green {
+    -fx-background-color: #dcfce7;
+}
+.badge-green .badge-text {
+    -fx-text-fill: #15803d;
+}
+
+/* ==========================================================================
+   INPUTS E BOTÕES
+   ========================================================================== */
+.form-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 9px 14px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #334155;
+}
+.form-input:focused {
+    -fx-border-color: #0b2861;
+    -fx-effect: dropshadow(three-pass-box, rgba(11, 40, 97, 0.08), 6, 0, 0, 0);
+}
+
+/* Botão de Pesquisa Customizado */
+.btn-search-css {
+    -fx-background-color: #0b2861;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 0 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(11, 40, 97, 0.1), 6, 0, 0, 2);
+}
+.btn-search-css:hover {
+    -fx-background-color: #1e3a8a;
+}
+.btn-search-css:pressed {
+    -fx-background-color: #0f172a;
+}
+
+/* ==========================================================================
+   TABELA CUSTOMIZADA
+   ========================================================================== */
+.custom-table {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #e2e8f0;
+}
+.custom-table .column-header-background {
+    -fx-background-color: #f1f5f9;
+    -fx-background-radius: 8px 8px 0 0;
+}
+.custom-table .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 38;
+    -fx-border-color: transparent #e2e8f0 transparent transparent;
+}
+.custom-table .column-header .label {
+    -fx-text-fill: #475569;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+.custom-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #f1f5f9 transparent;
+    -fx-size: 36;
+}
+.custom-table .table-row-cell:filled:hover {
+    -fx-background-color: #f8fafc;
+}

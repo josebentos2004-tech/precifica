@@ -23,7 +23,7 @@
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
             </Button>
-            <Button styleClass="menu-button" text="Total de Produtos">
+            <Button styleClass="menu-button" text="Total de Produtos"  onAction="#abrirproduto" >
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-box-seam" iconSize="20" /></graphic>
             </Button>
             <Button onAction="#abrirTelaPrecificacao" styleClass="menu-button" text="Precificação">
