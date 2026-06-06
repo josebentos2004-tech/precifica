@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="25" style="-fx-background-color: #f8fafc;" stylesheets="@produto_total.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.CadastrofuncioController" VBox.vgrow="ALWAYS">
+<VBox spacing="25" style="-fx-background-color: #f8fafc;" stylesheets="@css/produto_total.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.CadastrofuncioController" VBox.vgrow="ALWAYS">
 
     <VBox spacing="5" styleClass="header-banner">
         <padding>

@@ -11,7 +11,7 @@ public class Conexao {
 
     private static final String USER = "root";
 
-    private static final String PASSWORD = "precifica";
+    private static final String PASSWORD = "";
 
     public static Connection conectar() {
 

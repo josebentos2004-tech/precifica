@@ -16,16 +16,15 @@ public class SpalshController {
     private Button init;
     @FXML
     private  void  btnInit(ActionEvent event) throws IOException {
-        System.out.println("Clicado");
-        init.setText("Entrando...");
-        FXMLLoader loader=new FXMLLoader(getClass().getResource("cadastrofuncio.fxml"));
-        Parent root=loader.load();
-        //2
-        Stage stage=(Stage) ((Node) event.getSource()).getScene().getWindow();
-        //3
-        Scene scene=new Scene(root);
-        stage.setScene(scene);
-        stage.show();
+        Stage stage =
+                (Stage) ((Node) event.getSource())
+                        .getScene()
+                        .getWindow();
+
+        ScreenManager.changeScreen(
+                stage,
+                "login.fxml"
+        );
     }
 }
 

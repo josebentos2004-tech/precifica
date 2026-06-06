@@ -1,54 +1,142 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <?import javafx.scene.control.*?>
-<?import javafx.scene.image.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<AnchorPane prefHeight="500.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.LoginController">
+<AnchorPane prefHeight="600.0"
+            prefWidth="1000.0"
+            stylesheets="@css/login.css"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project30.LoginController">
 
     <children>
 
-        <!-- LADO ESQUERDO -->
-        <AnchorPane layoutX="0.0" layoutY="0.0" prefHeight="500.0" prefWidth="600.0">
-            <ImageView fitHeight="509.0" fitWidth="416.0" layoutX="-2.0" layoutY="1.0" pickOnBounds="true" preserveRatio="true">
-                <image>
-                    <Image url="@../../../fotos/login.png" />
-                </image>
-            </ImageView>
+        <HBox AnchorPane.topAnchor="0.0"
+              AnchorPane.bottomAnchor="0.0"
+              AnchorPane.leftAnchor="0.0"
+              AnchorPane.rightAnchor="0.0">
 
-        </AnchorPane>
+            <!-- PAINEL ESQUERDO -->
+            <AnchorPane prefWidth="400.0"
+                        styleClass="left-panel">
+
+                <children>
+                    <Pane styleClass="overlay"
+                          AnchorPane.topAnchor="0.0"
+                          AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0"/>
+
+                    <VBox alignment="CENTER"
+                          spacing="15"
+                          AnchorPane.topAnchor="0.0"
+                          AnchorPane.bottomAnchor="0.0"
+                          AnchorPane.leftAnchor="0.0"
+                          AnchorPane.rightAnchor="0.0">
+
+                        <ImageView fitHeight="450.0" fitWidth="450.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../../../logo4.png"/>
+                            </image>
+                        </ImageView>
 
 
-        <!-- LADO DIREITO -->
-        <AnchorPane layoutX="350.0" layoutY="0.0" prefHeight="500.0" prefWidth="550.0" style="-fx-background-color: white;">
 
-            <children>
 
-                <Label layoutX="120.0" layoutY="80.0" style="-fx-font-size: 24px; -fx-font-weight: bold;" text="Bem-vindo(a)!" textFill="#081b5f" />
+                    </VBox>
+                </children>
+            </AnchorPane>
 
-                <Label layoutX="120.0" layoutY="110.0" style="-fx-text-fill: gray;" text="Faça login para continuar" />
+            <!-- PAINEL DIREITO - CENTRALIZADO -->
+            <AnchorPane HBox.hgrow="ALWAYS"
+                        styleClass="right-panel">
 
-                <!-- USUÁRIO -->
-                <Label layoutX="120.0" layoutY="160.0" text="Usuário" />
+                <children>
+                    <!-- Container centralizado -->
+                    <VBox spacing="20"
+                          alignment="CENTER"
+                          styleClass="form-container"
+                          AnchorPane.leftAnchor="0"
+                          AnchorPane.rightAnchor="0"
+                          AnchorPane.topAnchor="0"
+                          AnchorPane.bottomAnchor="0">
 
-                <TextField fx:id="usuarioCampo" layoutX="120.0" layoutY="185.0" prefHeight="35.0" prefWidth="300.0" promptText="Digite seu usuário" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ccc;" />
+                        <!-- Card do formulário -->
+                        <VBox spacing="20"
+                              alignment="CENTER"
+                              styleClass="login-card"
+                              maxWidth="400"
+                              prefWidth="380">
 
-                <!-- SENHA -->
-                <Label layoutX="120.0" layoutY="240.0" text="Senha" />
+                            <!-- cabeçalho -->
+                            <VBox spacing="5"
+                                  alignment="CENTER">
+                                <Label text="Bem-vindo(a)!"
+                                       styleClass="title"/>
+                                <Label text="Faça login para acessar sua conta"
+                                       styleClass="subtitle"/>
+                            </VBox>
 
-                <PasswordField fx:id="senhaCampo" layoutX="120.0" layoutY="265.0" prefHeight="35.0" prefWidth="300.0" promptText="Digite sua senha" style="-fx-background-radius: 8; -fx-border-radius: 8; -fx-border-color: #ccc;" />
+                            <!-- campo usuário -->
+                            <VBox spacing="8"
+                                  alignment="CENTER_LEFT">
+                                <Label text="Usuário"
+                                       styleClass="input-label"/>
 
-                <!-- BOTÃO -->
-                <Button fx:id="btnEntrar" layoutX="120.0" layoutY="320.0" onAction="#btnEntrarAction" onMouseEntered="#hoverOn" onMouseExited="#hoverOff" prefHeight="40.0" prefWidth="300.0" style="-fx-background-color: #1C8D48; -fx-text-fill: white; -fx-font-size: 14px; -fx-background-radius: 10; -fx-border-radius: 10;" text="Entrar" />
+                                <HBox alignment="CENTER_LEFT"
+                                      spacing="12"
+                                      styleClass="input-container">
+                                    <FontIcon iconLiteral="bi-person"
+                                              styleClass="input-icon"/>
+                                    <TextField fx:id="usuarioCampo"
+                                               promptText="Digite seu usuário"
+                                               styleClass="text-field-custom"/>
+                                </HBox>
+                            </VBox>
 
-                <Hyperlink layoutX="120.0" layoutY="370.0" text="Ainda não tem  uma conta?" />
+                            <!-- campo senha -->
+                            <VBox spacing="8"
+                                  alignment="CENTER_LEFT">
+                                <Label text="Senha"
+                                       styleClass="input-label"/>
 
-                <Button fx:id="btnCadastrar" layoutX="120.0" layoutY="410.0" onAction="#irParaCadastro" prefHeight="35.0" prefWidth="300.0" style="-fx-border-color: #1C8D48; -fx-text-fill: #1C8D48; -fx-background-radius: 10; -fx-border-radius: 10; -fx-background-color: white;" text="Cadastrar" />
+                                <HBox alignment="CENTER_LEFT"
+                                      spacing="12"
+                                      styleClass="input-container">
+                                    <FontIcon iconLiteral="bi-lock"
+                                              styleClass="input-icon"/>
+                                    <PasswordField fx:id="senhaCampo"
+                                                   promptText="Digite sua senha"
+                                                   styleClass="text-field-custom"/>
+                                </HBox>
+                            </VBox>
+                            <Hyperlink text="Não tem conta? Cadastrar"
+                                       onAction="#irParaCadastro"
+                                       styleClass="register-link"/>
 
-            </children>
 
-        </AnchorPane>
 
+                            <!-- botão login -->
+                            <Button fx:id="btnEntrar"
+                                    text="ENTRAR"
+                                    onAction="#btnEntrarAction"
+                                    styleClass="login-button"/>
+
+                            <!-- link cadastro -->
+
+
+                            <!-- mensagem de erro -->
+                            <Label fx:id="mensagemErro"
+                                   styleClass="error-message"
+                                   visible="false"
+                                   managed="false"/>
+                        </VBox>
+                    </VBox>
+                </children>
+            </AnchorPane>
+        </HBox>
     </children>
-
 </AnchorPane>

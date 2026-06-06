@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<BorderPane prefHeight="600" prefWidth="800" stylesheets="@dashboard.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.DashboardController">
+<BorderPane prefHeight="600" prefWidth="800" stylesheets="@css/dashboard.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.DashboardController">
 
     <!-- SIDEBAR -->
     <left>
@@ -19,11 +19,11 @@
 
 
             <!-- Menu -->
-            <Button prefHeight="49.0" prefWidth="238.0" onAction="#abrirDashboard" styleClass="menu-button" text="Dashboard">
+            <Button onAction="#abrirDashboard" prefHeight="49.0" prefWidth="238.0" styleClass="menu-button" text="Dashboard">
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
             </Button>
-            <Button styleClass="menu-button" text="Total de Produtos"  onAction="#abrirproduto" >
+            <Button onAction="#abrirproduto" styleClass="menu-button" text="Total de Produtos">
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-box-seam" iconSize="20" /></graphic>
             </Button>
             <Button onAction="#abrirTelaPrecificacao" styleClass="menu-button" text="Precificação">

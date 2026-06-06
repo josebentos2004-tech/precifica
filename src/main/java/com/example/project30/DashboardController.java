@@ -58,7 +58,7 @@ public class DashboardController {
     @FXML
     private void abrirDashboard() {
         try {
-            Parent novaTela = FXMLLoader.load(getClass().getResource("dasboard1.fxml"));
+            Parent novaTela = FXMLLoader.load(getClass().getResource("dashboard.fxml"));
             conteudoDinamico.getChildren().clear();
             conteudoDinamico.getChildren().add(novaTela);
         } catch (IOException e) {
@@ -80,12 +80,16 @@ public class DashboardController {
             if (result.getText().startsWith("Sim")) {
                 try {
                     this.user = null;
-                    FXMLLoader loader = new FXMLLoader(getClass().getResource("login.fxml"));
-                    Parent root = loader.load();
-                    Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-                    stage.setScene(new Scene(root));
-                    stage.show();
-                } catch (IOException e) {
+                    Stage stage =
+                            (Stage) ((Node) event.getSource())
+                                    .getScene()
+                                    .getWindow();
+
+                    ScreenManager.changeScreen(
+                            stage,
+                            "login.fxml"
+                    );
+                } catch (Error e) {
                     e.printStackTrace();
                 }
             }

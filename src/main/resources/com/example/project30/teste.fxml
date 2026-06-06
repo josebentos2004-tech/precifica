@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane  xmlns="http://javafx.com/javafx/8" prefHeight="600" prefWidth="800"
+             xmlns:fx="http://javafx.com/fxml/1"
+             >
+            style="-fx-background-color: #0A1F44;">
+
+    <children>
+        <!-- Logo / Título -->
+        <VBox alignment="CENTER" spacing="10" layoutX="200" layoutY="30">
+            <Label text="Precifica" textFill="white" style="-fx-font-size: 28px; -fx-font-weight: bold;"/>
+            <Label text="Preço certo, lucro real" textFill="#00FF88" style="-fx-font-size: 14px;"/>
+        </VBox>
+
+        <!-- Área de Login -->
+        <VBox alignment="CENTER" spacing="12" layoutX="150" layoutY="120" prefWidth="300">
+            <TextField fx:id="emailField" promptText="E-mail de Acesso" prefWidth="280"/>
+            <PasswordField fx:id="senhaField" promptText="Senha" prefWidth="280"/>
+
+            <Button text="Entrar"
+                    style="-fx-background-color: #00FF88; -fx-text-fill: white; -fx-font-weight: bold;"
+                    prefWidth="280"/>
+
+            <Hyperlink text="Não possui conta? Cadastre-se"
+                       textFill="white"/>
+        </VBox>
+
+        <!-- Área de Cadastro (inicialmente oculta) -->
+        <VBox fx:id="cadastroPane" visible="false" alignment="CENTER" spacing="12"
+              layoutX="150" layoutY="120" prefWidth="300">
+            <TextField fx:id="nomeField" promptText="Nome Completo" prefWidth="280"/>
+            <TextField fx:id="emailCadastroField" promptText="E-mail de Acesso" prefWidth="280"/>
+            <TextField fx:id="nifField" promptText="NIF" prefWidth="280"/>
+            <PasswordField fx:id="senhaCadastroField" promptText="Senha" prefWidth="280"/>
+            <PasswordField fx:id="confirmarSenhaField" promptText="Confirmar Senha" prefWidth="280"/>
+
+            <Button text="Cadastrar"
+                    style="-fx-background-color: #00FF88; -fx-text-fill: white; -fx-font-weight: bold;"
+                    prefWidth="280"/>
+
+            <Hyperlink text="Já possui conta? Faça login"
+                       textFill="white" />
+        </VBox>
+    </children>
+</AnchorPane>
+

@@ -4,7 +4,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela4.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela4">
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@css/precifica_tela4.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela4">
 
     <Label styleClass="flow-title" text="Definição de Lucro" />
 
@@ -28,6 +28,19 @@
                         <children>
                             <Label styleClass="input-label" text="Preço de Mercado (Opcional)" />
                             <TextField fx:id="txtPrecoMercado" styleClass="custom-text-field" promptText="Preço do concorrente" />
+                        </children>
+                    </VBox>
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Transporte / Frete" />
+                            <TextField fx:id="txtFrete" promptText="Custo de logística" styleClass="custom-text-field" />
+                        </children>
+                    </VBox>
+
+                    <VBox spacing="6">
+                        <children>
+                            <Label styleClass="input-label" text="Embalagens e Outros" />
+                            <TextField fx:id="txtEmbalagem" promptText="Custos adicionais" styleClass="custom-text-field" />
                         </children>
                     </VBox>
 

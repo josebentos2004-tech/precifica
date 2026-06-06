@@ -1,11 +1,13 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
+ */
 package com.example.project30;
-
-import database.Conexao;
+import  database.Conexao;
+import  java.sql.Connection;
+import  java.sql.PreparedStatement;
 import java.io.IOException;
 import java.net.URL;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,19 +25,22 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
 /**
- * Controller de Login adaptado estritamente com o bloqueio de espaços maliciosos
+ *
+ * @author Cristiano
  */
 public class LoginController implements Initializable {
-
+    
+    
+    
     @FXML
     private TextField usuarioCampo;
-
+    
     @FXML
     private PasswordField senhaCampo;
-
+    
     @FXML
     private Button btnEntrar;
-
+    
     @FXML
     private void hoverOn(MouseEvent e) {
         btnEntrar.setStyle("-fx-background-color: #166b38; -fx-text-fill: white;");
@@ -48,11 +53,12 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btnEntrarAction(ActionEvent event) {
+
         String usuario = usuarioCampo.getText();
         String senha = senhaCampo.getText();
 
-        // REGRA: Bloqueio de Espaços Vazios Maliciosos no login
-        if (usuario == null || usuario.trim().isEmpty() || senha == null || senha.isEmpty()) {
+        if (usuario.trim().isEmpty() || senha.isEmpty()) {
+
             mostrarAlerta("Informação", "Preencha os dados!");
             return;
         }
@@ -62,12 +68,14 @@ public class LoginController implements Initializable {
         try (Connection conn = Conexao.conectar();
              PreparedStatement stmt = conn.prepareStatement(sql)) {
 
-            stmt.setString(1, usuario.trim());
+            stmt.setString(1, usuario);
             stmt.setString(2, senha);
 
-            ResultSet rs = stmt.executeQuery();
+            var rs = stmt.executeQuery();
 
             if (rs.next()) {
+
+                // 🔥 CRIAR USER LOGADO
                 User user = new User(
                         rs.getInt("id"),
                         rs.getString("nome"),
@@ -75,6 +83,9 @@ public class LoginController implements Initializable {
                         rs.getString("nif")
                 );
 
+                ScreenManager.mostrarAlerta("Sucesso","Logado com sucesso");
+
+                // 🔥 IR PARA DASHBOARD COM DADOS
                 openDashboard(event, user);
 
             } else {
@@ -87,34 +98,51 @@ public class LoginController implements Initializable {
         }
     }
 
-    public void mostrarAlerta(String titulo, String msg){
-        Alert alert = new Alert(AlertType.INFORMATION);
+
+    public   void  mostrarAlerta(String titulo, String msg){
+        Alert alert=new Alert(AlertType.INFORMATION);
         alert.setTitle(titulo);
-        alert.setHeaderText(null);
         alert.setContentText(msg);
         alert.showAndWait();
     }
-
     private void openDashboard(ActionEvent event, User user) throws IOException {
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("dashboard.fxml"));
+
+        FXMLLoader loader = new FXMLLoader(
+                getClass().getResource("dashboard.fxml")
+        );
+
         Parent root = loader.load();
 
         DashboardController controller = loader.getController();
+
+        // ENVIAR USER PARA DASHBOARD
         controller.setUser(user);
 
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        Stage stage = (Stage) ((Node) event.getSource())
+                .getScene()
+                .getWindow();
+
         stage.setScene(new Scene(root));
+        stage.setMaximized(true);
         stage.show();
     }
-
     @FXML
     private void irParaCadastro(ActionEvent event) throws IOException {
-        Parent root = FXMLLoader.load(getClass().getResource("cadastrofuncio.fxml"));
-        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        stage.setScene(new Scene(root));
-        stage.show();
+
+        Stage stage =
+                (Stage) ((Node) event.getSource())
+                        .getScene()
+                        .getWindow();
+
+        ScreenManager.changeScreen(
+                stage,
+                "cadastrofuncio.fxml"
+        );
     }
 
     @Override
-    public void initialize(URL url, ResourceBundle rb) {}
+    public void initialize(URL url, ResourceBundle rb) {
+        // TODO
+    }    
+    
 }

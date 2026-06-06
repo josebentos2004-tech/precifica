@@ -1,0 +1,208 @@
+/* ==========================================================================
+   1. CONFIGURAÇÃO GLOBAL (ROOT)
+   ========================================================================== */
+.root {
+    -fx-background-color: #F8FAFC; /* Fundo cinza-claro moderno para todo o app */
+}
+
+/* ==========================================================================
+   2. ESTRUTURA DA SIDEBAR (MENU LATERAL REFORMULADO)
+   ========================================================================== */
+.sidebar {
+    -fx-background-color: #081B5F; /* Azul escuro principal da marca */
+    -fx-padding: 30px 20px;       /* Mais respiro nas bordas internas */
+    -fx-spacing: 12px;            /* Espaçamento equilibrado entre os botões */
+}
+
+/* Nome do Sistema */
+.logo {
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 28px;          /* Destaque ideal para a marca */
+    -fx-font-weight: bold;
+    -fx-padding: 0 0 15px 12px;   /* Afastamento do primeiro botão do menu */
+}
+
+.subtitle {
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 13px;
+}
+
+/* Botão Padrão do Menu (Inativo) */
+.menu-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #94A3B8;        /* Cinza azulado suave muito elegante */
+    -fx-font-size: 16px;           /* Letras maiores e mais profissionais */
+    -fx-font-weight: 500;          /* Peso de leitura limpo */
+    -fx-alignment: CENTER_LEFT;
+    -fx-padding: 12px 16px;        /* Botão encorpado, fácil de clicar */
+    -fx-background-radius: 10px;   /* Cantos suaves nos botões */
+    -fx-cursor: hand;
+    -fx-max-width: Infinity;       /* Força o botão a preencher a largura útil */
+}
+
+/* Efeito ao passar o mouse nos botões do menu */
+.menu-button:hover {
+    -fx-background-color: rgba(255, 255, 255, 0.08); /* Destaque translúcido moderno */
+    -fx-text-fill: #FFFFFF;        /* O texto acende em branco puro */
+}
+
+/* Estado Ativo: Aplique esta classe no botão da tela que estiver aberta */
+.menu-button-active {
+    -fx-background-color: #1E40AF; /* Azul destacado ativo */
+    -fx-text-fill: #FFFFFF;        /* Texto em branco */
+    -fx-font-weight: bold;
+}
+
+/* Informações do Usuário no rodapé da Sidebar */
+.profile-label {
+    -fx-text-fill: #E2E8F0;
+    -fx-font-size: 14px;           /* Legível e discreto */
+    -fx-font-weight: 500;
+    -fx-padding: 15px 0 5px 12px;
+}
+
+/* Botão Sair (Logout) */
+.logout-button {
+    -fx-background-color: rgba(239, 68, 68, 0.15); /* Vermelho suave de fundo */
+    -fx-text-fill: #F87171;                         /* Texto vermelho claro */
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10px;
+    -fx-padding: 12px 16px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-max-width: Infinity;
+    -fx-cursor: hand;
+}
+
+/* Efeito ao passar o mouse no botão Sair */
+.logout-button:hover {
+    -fx-background-color: #EF4444;                 /* Vermelho sólido clássico */
+    -fx-text-fill: #FFFFFF;                         /* Letra fica branca */
+}
+
+/* ==========================================================================
+   3. CONTAINER DINÂMICO CENTRAL (PAINEL BRANCO RESPONSIVO)
+   ========================================================================== */
+.main-dynamic-container {
+    -fx-background-color: #FFFFFF; /* Painel do meio 100% branco */
+    -fx-background-radius: 16px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 16px;
+    -fx-background-insets: 20px;   /* Margem de segurança para telas grandes */
+    -fx-border-insets: 20px;
+}
+
+/* Elementos do Cabeçalho dentro do Painel */
+.header-title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+.header-subtitle {
+    -fx-text-fill: #64748B;
+    -fx-font-size: 14px;
+}
+
+.header-nif {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #334155;
+}
+
+.header-plano {
+    -fx-font-size: 13px;
+    -fx-text-fill: #0EA5E9;
+    -fx-font-weight: bold;
+}
+
+/* Títulos de Seções Gerais */
+.section-title {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1E293B;
+}
+
+/* ==========================================================================
+   4. COMPONENTES DO DASHBOARD INICIAL
+   ========================================================================== */
+
+/* Cards Principais (Produtos, Lucro, Custos) */
+.card-dashboard {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 12px;
+    -fx-border-color: #F1F5F9;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-padding: 20px;
+    -fx-min-width: 160px;
+    -fx-pref-height: 120px;
+    -fx-spacing: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 10, 0, 0, 4);
+}
+
+/* Card Especial de Alerta */
+.card-alert-dashboard {
+    -fx-background-color: #FEF2F2;
+    -fx-background-radius: 12px;
+    -fx-padding: 20px;
+    -fx-min-width: 160px;
+    -fx-pref-height: 120px;
+    -fx-spacing: 8;
+    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.05), 10, 0, 0, 4);
+}
+
+.card-dashboard-title {
+    -fx-font-size: 14px;
+    -fx-text-fill: #64748B;
+    -fx-font-weight: bold;
+}
+
+.card-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+/* Botões de Ação Rápida */
+.action-button {
+    -fx-background-color: #FFFFFF;
+    -fx-text-fill: #334155;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 10px 18px;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.02), 4, 0, 0, 2);
+}
+
+.action-button:hover {
+    -fx-background-color: #0F172A;
+    -fx-text-fill: #FFFFFF;
+    -fx-border-color: #0F172A;
+}
+
+/* Bloco de Resumo */
+.card-resumo {
+    -fx-background-color: #F8FAFC;
+    -fx-background-radius: 12px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 12px;
+    -fx-padding: 20px;
+}
+
+.section-title-resumo {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A;
+}
+
+.resumo-item {
+    -fx-font-size: 13px;
+    -fx-text-fill: #475569;
+}
+

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project30.SpalshController"
+            prefHeight="600.0"
+            prefWidth="300.0"
+            stylesheets="@css/splash.css">
+
+   <children>
+
+      <!-- Imagem de fundo -->
+      <AnchorPane styleClass="background-pane"
+                  AnchorPane.topAnchor="0.0"
+                  AnchorPane.bottomAnchor="0.0"
+                  AnchorPane.leftAnchor="0.0"
+                  AnchorPane.rightAnchor="0.0">
+
+         <!-- Overlay escuro para melhorar legibilidade -->
+         <Pane styleClass="overlay"
+               AnchorPane.topAnchor="0.0"
+               AnchorPane.bottomAnchor="0.0"
+               AnchorPane.leftAnchor="0.0"
+               AnchorPane.rightAnchor="0.0"/>
+
+      </AnchorPane>
+
+      <!-- Conteúdo centralizado -->
+      <VBox alignment="CENTER"
+            spacing="40"
+            AnchorPane.topAnchor="0"
+            AnchorPane.bottomAnchor="0"
+            AnchorPane.leftAnchor="0"
+            AnchorPane.rightAnchor="0">
+
+         <!-- Logo -->
+         <ImageView fitHeight="300"
+                    fitWidth="500"
+                    preserveRatio="true">
+
+               <Image url="@/logo3.png" />
+
+         </ImageView>
+
+
+
+
+
+         <!-- Botão Iniciar -->
+         <Button fx:id="btnIniciar"
+                 text="INICIAR"
+                 onAction="#btnInit"
+                 styleClass="start-button" />
+
+         <!-- Versão -->
+         <Text text="Versão 1.0.0"
+               styleClass="version-text" />
+
+      </VBox>
+
+   </children>
+</AnchorPane>

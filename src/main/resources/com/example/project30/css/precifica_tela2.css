@@ -1,0 +1,107 @@
+
+
+
+/* ==========================================================================
+   6. FLUXO DE PRECIFICAÇÃO (ETAPA DO COMERCIANTE)
+   ========================================================================== */
+
+/* Título Grande do Topo */
+.flow-title {
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #0F172A; /* Slate 900 */
+}
+
+/* Card Branco do Formulário (Esquerda) */
+.form-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16px;
+    -fx-padding: 30px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.04), 12, 0, 0, 4);
+}
+
+/* Título interno do Card */
+.form-card-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #081B5F; /* Azul identidade do app */
+}
+
+/* Legenda acima dos Inputs */
+.input-label {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748B; /* Cinza suave profissional */
+    -fx-font-weight: 500;
+}
+
+/* TextFields customizados idênticos à imagem */
+.custom-text-field {
+    -fx-background-color: #F8FAFC; /* Fundo cinza bem clarinho */
+    -fx-background-radius: 8px;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+    -fx-padding: 12px 14px;
+    -fx-font-size: 14px;
+    -fx-text-fill: #334155;
+}
+
+/* Efeito de Foco ao clicar no Input */
+.custom-text-field:focused {
+    -fx-background-color: #FFFFFF;
+    -fx-border-color: #081B5F; /* Borda assume o azul da marca */
+
+}
+
+/* Card da Imagem (Direita) */
+.image-card {
+    -fx-background-color: #FFFFFF;
+    -fx-background-radius: 16px;
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.04), 12, 0, 0, 4);
+}
+
+
+/* --- BOTÕES DE NAVEGAÇÃO --- */
+
+/* Botão Principal (Seguinte) */
+.nav-button-primary {
+    -fx-background-color: #081B5F;
+    -fx-text-fill: #FFFFFF;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 22px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+}
+
+.nav-button-primary:hover {
+    -fx-background-color: #1E3A8A;
+}
+
+.nav-button-primary:pressed {
+    -fx-background-color: #0F172A;
+}
+
+/* Botão Secundário (Anterior) */
+.nav-button-secondary {
+    -fx-background-color: #F1F5F9;
+    -fx-text-fill: #475569;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 10px 22px;
+    -fx-background-radius: 8px;
+    -fx-cursor: hand;
+    -fx-border-color: #E2E8F0;
+    -fx-border-width: 1px;
+    -fx-border-radius: 8px;
+}
+
+.nav-button-secondary:hover {
+    -fx-background-color: #E2E8F0;
+    -fx-text-fill: #1E293B;
+}
+
+.nav-button-secondary:pressed {
+    -fx-background-color: #CBD5E1;
+}

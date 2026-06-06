@@ -5,7 +5,7 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 <?import javafx.scene.image.*?>
 
-<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela3.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela3"> <Label styleClass="flow-title" text="Fluxo: Produtor" />
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@css/precifica_tela3.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela3"> <Label styleClass="flow-title" text="Fluxo: Produtor" />
 
     <HBox alignment="TOP_LEFT" spacing="30" VBox.vgrow="ALWAYS">
         <children>

@@ -1,0 +1,166 @@
+/* ============================================
+   VARIÁVEIS DE CORES
+   ============================================ */
+.root {
+    -primary-color: #62B948;
+    -primary-dark: #4CAF3A;
+    -primary-darker: #3d8a2e;
+    -text-dark: #1a2b4c;
+    -text-gray: #5a6a7e;
+    -text-light: #7f8c8d;
+    -text-white: #ffffff;
+    -bg-white: #ffffff;
+    -bg-light: #F5F7FA;
+    -bg-input: #f8f9fc;
+    -border-light: #e1e5eb;
+    -border-input: #cbd5e1;
+    -error-color: #e74c3c;
+    -success-color: #27ae60;
+    -overlay-dark: rgba(0, 0, 0, 0.65);
+}
+
+/* LEFT PANEL - 40% */
+.left-panel {
+    -fx-background-image: url("/register.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 500;
+}
+
+.overlay {
+    /*-fx-background-color: -overlay-dark;*/
+}
+
+/* LOGO */
+.logo-title {
+    -fx-text-fill: -text-white;
+    -fx-font-size: 32px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtitle {
+    -fx-text-fill: -primary-color;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* RIGHT PANEL - 60% */
+.right-panel-container {
+    -fx-background-color: -bg-light;
+}
+
+/* CONTAINER ARREDONDADO - OCUPA TODO O LADO DIREITO */
+.form-container {
+    -fx-background-color: -bg-white;
+    -fx-background-radius: 30 0 0 30;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 10, 0, -2, 0);
+}
+
+/* CONTEÚDO DO FORMULÁRIO - TAMANHO FIXO CENTRALIZADO */
+.form-content {
+    -fx-padding: 30 20;
+}
+
+/* TITLES */
+.title {
+    -fx-font-size: 28px;
+    -fx-font-weight: bold;
+    -fx-text-alignment:left;
+    -fx-text-fill: -text-dark;
+}
+
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: -text-light;
+}
+
+/* INPUT LABEL */
+.input-label {
+    -fx-text-fill: -text-dark;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+/* INPUT CONTAINER */
+.input-container {
+    -fx-background-color: -bg-input;
+    -fx-border-color: -border-light;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 360;
+    -fx-padding: 0 15 0 15;
+}
+
+.input-container:focused {
+    -fx-border-color: -primary-color;
+    -fx-border-width: 2;
+}
+
+.input-icon {
+    -fx-icon-color: -primary-color;
+    -fx-icon-size: 18;
+}
+
+.text-field-custom {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-pref-width: 280;
+    -fx-prompt-text-fill: -text-light;
+}
+
+.text-field-custom:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* LINK */
+.register-link {
+    -fx-text-fill: -primary-color;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+    -fx-border-color: transparent;
+    -fx-padding: 10 0 0 0;
+}
+
+.register-link:hover {
+    -fx-underline: true;
+}
+
+/* BOTÃO CADASTRAR */
+.cadastro-button {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: -text-white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 360;
+    -fx-cursor: hand;
+}
+
+.cadastro-button:hover {
+    -fx-background-color: -primary-dark;
+}
+
+.cadastro-button:pressed {
+    -fx-background-color: -primary-darker;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    -fx-text-fill: -error-color;
+    -fx-font-size: 12px;
+    -fx-padding: 5 0 0 0;
+    -fx-alignment: CENTER;
+}
+
+/* MENSAGEM DE SUCESSO */
+.success-message {
+    -fx-text-fill: -success-color;
+    -fx-font-size: 12px;
+    -fx-padding: 5 0 0 0;
+    -fx-alignment: CENTER;
+}

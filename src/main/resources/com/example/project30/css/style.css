@@ -1,0 +1,22 @@
+#paneFundo{
+    -fx-background-image:url("../../../f2.jpg");
+    -fx-background-size:cover;
+    -fx-background-position:center;
+    -fx-background-repeat:no-repeat;
+
+
+}
+#splah{
+    -fx-background-image:url("@./");
+    -fx-background-size:cover;
+    -fx-background-position:center;
+    -fx-background-repeat:no-repeat;
+
+
+}
+#coulor{
+    -fx-background-color: #62B948;
+    -fx-min-width: full;
+    -fx-max-width: full;
+    -fx-opacity: 30;
+}

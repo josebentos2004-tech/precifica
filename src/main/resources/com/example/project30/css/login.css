@@ -1,0 +1,174 @@
+.root {
+    -fx-background-color: white;
+}
+
+/* LEFT PANEL - 40% */
+.left-panel {
+    -fx-background-image: url("/login.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+    -fx-pref-width: 400;
+}
+
+.overlay {
+
+}
+
+/* LOGO */
+.logo-title {
+    -fx-text-fill: white;
+    -fx-font-size: 38px;
+    -fx-font-weight: bold;
+}
+
+.logo-subtitle {
+    -fx-text-fill: #62B948;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+/* RIGHT PANEL - 60% */
+.right-panel {
+    -fx-background-color: #F5F7FA;
+}
+
+/* CONTAINER CENTRALIZADO */
+.form-container {
+    -fx-background-color: #F5F7FA;
+}
+
+/* CARD DO FORMULÁRIO */
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-radius: 20;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 15, 0, 0, 5);
+    -fx-padding: 40 35 40 35;
+}
+
+/* TITLES */
+.title {
+    -fx-font-size: 26px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a2b4c;
+}
+
+.subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #7f8c8d;
+}
+
+/* INPUT LABEL */
+.input-label {
+    -fx-text-fill: #1a2b4c;
+    -fx-font-size: 13px;
+    -fx-font-weight: 600;
+}
+
+/* INPUT CONTAINER */
+.input-container {
+    -fx-background-color: #f8f9fc;
+    -fx-border-color: #e1e5eb;
+    -fx-border-radius: 12;
+    -fx-background-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 340;
+    -fx-padding: 0 15 0 15;
+}
+
+.input-container:focused {
+    -fx-border-color: #62B948;
+    -fx-border-width: 2;
+}
+
+.input-icon {
+    -fx-icon-color: #62B948;
+    -fx-icon-size: 18;
+}
+
+.text-field-custom {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+    -fx-font-size: 13px;
+    -fx-pref-width: 260;
+    -fx-prompt-text-fill: #b0b5bd;
+}
+
+.text-field-custom:focused {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent;
+}
+
+/* CHECKBOX */
+.checkbox-custom {
+    -fx-text-fill: #5a6a7e;
+    -fx-font-size: 12px;
+}
+
+.checkbox-custom .box {
+    -fx-background-color: #f8f9fc;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 4;
+    -fx-background-radius: 4;
+}
+
+.checkbox-custom:selected .box {
+    -fx-background-color: #62B948;
+    -fx-border-color: #62B948;
+}
+
+.checkbox-custom:selected .mark {
+    -fx-background-color: white;
+}
+
+/* LINKS */
+.forgot-link {
+    -fx-text-fill: #62B948;
+    -fx-font-size: 12px;
+    -fx-border-color: transparent;
+}
+
+.forgot-link:hover {
+    -fx-underline: true;
+}
+
+.register-link {
+    -fx-text-fill: #1a2b4c;
+    -fx-font-size: 13px;
+    -fx-text-alignment: right;
+    -fx-font-weight: 600;
+    -fx-border-color: transparent;
+}
+
+.register-link:hover {
+    -fx-underline: true;
+    -fx-text-fill: #62B948;
+}
+
+/* BUTTON */
+.login-button {
+    -fx-background-color: #62B948;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 12;
+    -fx-pref-height: 48;
+    -fx-pref-width: 340;
+    -fx-cursor: hand;
+}
+
+.login-button:hover {
+    -fx-background-color: #4CAF3A;
+}
+
+.login-button:pressed {
+    -fx-background-color: #3d8a2e;
+}
+
+/* ERROR MESSAGE */
+.error-message {
+    -fx-text-fill: #e74c3c;
+    -fx-font-size: 12px;
+    -fx-padding: 5 0 0 0;
+}

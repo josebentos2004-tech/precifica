@@ -1,0 +1,94 @@
+/* ============================================
+   VARIÁVEIS DE CORES
+   ============================================ */
+.root {
+    -primary-color: #62B948;
+    -primary-dark: #4CAF3A;
+    -primary-darker: #3d8a2e;
+    -text-white: #ffffff;
+    -text-light: #e0e0e0;
+    -overlay-dark: rgba(0, 0, 0, 0.7);
+    -overlay-light: rgba(0, 0, 0, 0.5);
+}
+
+/* BACKGROUND COM IMAGEM */
+.background-pane {
+    -fx-background-image: url("/splash.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center center;
+    -fx-background-repeat: no-repeat;
+}
+
+/* OVERLAY ESCURO */
+
+
+/* TÍTULO PRINCIPAL */
+.title-text {
+    -fx-font-size: 48px;
+    -fx-font-weight: bold;
+    -fx-fill: -text-white;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.5), 5, 0, 0, 2);
+}
+
+/* SUBTÍTULO */
+.subtitle-text {
+    -fx-font-size: 16px;
+    -fx-font-weight: 600;
+    -fx-fill: -primary-color;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* LINHA DECORATIVA */
+.decorative-line {
+    -fx-background-color: -primary-color;
+    -fx-background-radius: 2;
+}
+
+/* SLOGAN */
+.slogan-text {
+    -fx-font-size: 14px;
+    -fx-fill: -text-light;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* BOTÃO INICIAR */
+.start-button {
+    -fx-background-color: -primary-color;
+    -fx-text-fill: -text-white;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-background-radius: 30;
+    -fx-pref-width: 220;
+    -fx-pref-height: 50;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(98,185,72,0.4), 15, 0, 0, 3);
+    -fx-padding: 0 20;
+}
+
+.start-button:hover {
+    -fx-background-color: -primary-dark;
+    -fx-effect: dropshadow(gaussian, rgba(98,185,72,0.6), 20, 0, 0, 5);
+}
+
+.start-button:pressed {
+    -fx-background-color: -primary-darker;
+    -fx-translate-y: 2px;
+}
+
+/* VERSÃO */
+.version-text {
+    -fx-font-size: 11px;
+    -fx-fill: #aaaaaa;
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+/* LOADING SPINNER (se usar a versão com loading) */
+.loading-spinner {
+    -fx-progress-color: -primary-color;
+}
+
+.loading-text {
+    -fx-font-size: 12px;
+    -fx-fill: -text-light;
+}

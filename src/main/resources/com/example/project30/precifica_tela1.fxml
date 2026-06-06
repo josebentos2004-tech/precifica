@@ -7,7 +7,7 @@
 <BorderPane xmlns="http://javafx.com/javafx/8"
             xmlns:fx="http://javafx.com/fxml/1"
             fx:controller="com.example.project30.preficica_tela1"
-            stylesheets="@precifica_tela1.css"
+            stylesheets="@css/precifica_tela1.css"
             prefHeight="600.0" prefWidth="900.0">
 
     <!-- CONTEÚDO PRINCIPAL (Baseado na imagem "sns.jpg") -->

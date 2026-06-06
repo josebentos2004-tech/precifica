@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
 
-<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela5.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela5">
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@css/precifica_tela5.css" xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela5">
 
     <Label styleClass="flow-title" text="Análise de Resultados" />
 

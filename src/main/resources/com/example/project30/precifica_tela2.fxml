@@ -5,7 +5,7 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
-<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@precifica_tela2.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela2">
+<VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@css/precifica_tela2.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela2">
 
     <Label styleClass="flow-title" text="Fluxo: Comerciante" />
 
@@ -24,22 +24,22 @@
 
                     <VBox spacing="6">
                         <children>
-                            <Label styleClass="input-label" text="Custo Unitário de Compra (Fornecedor)" />
-                            <TextField fx:id="txtCustoCompra" promptText="Ex: 1.500,00" styleClass="custom-text-field" />
+                            <Label styleClass="input-label" text="Nome do Produto" />
+                            <TextField fx:id="txtproduto" promptText="Nome do Produto" styleClass="custom-text-field" />
                         </children>
                     </VBox>
 
                     <VBox spacing="6">
                         <children>
-                            <Label styleClass="input-label" text="Transporte / Frete" />
-                            <TextField fx:id="txtFrete" promptText="Custo de logística" styleClass="custom-text-field" />
+                            <Label styleClass="input-label" text="Custo Total de Compra (Fornecedor)" />
+                            <TextField fx:id="txtcusto" promptText="Ex: 1500,00" styleClass="custom-text-field" />
                         </children>
                     </VBox>
 
                     <VBox spacing="6">
                         <children>
-                            <Label styleClass="input-label" text="Embalagens e Outros" />
-                            <TextField fx:id="txtEmbalagem" promptText="Custos adicionais" styleClass="custom-text-field" />
+                            <Label styleClass="input-label" text="Quantidade Compradas (Fornecedor)" />
+                            <TextField fx:id="txtquantidade" promptText="Ex: 1500" styleClass="custom-text-field" />
                         </children>
                     </VBox>
 
@@ -66,6 +66,7 @@
 
             <VBox alignment="CENTER" maxWidth="450" styleClass="image-card" HBox.hgrow="ALWAYS">
                 <children>
+                    <!-- Imagem removida, pode adicionar depois -->
                     <ImageView fitHeight="256.0" fitWidth="233.0" pickOnBounds="true" preserveRatio="true">
                         <image>
                             <Image url="@../../../maney.jpg"/>
