@@ -92,7 +92,7 @@
                                     <FontIcon iconLiteral="bi-person"
                                               styleClass="input-icon"/>
                                     <TextField fx:id="usuarioCampo"
-                                               promptText="Digite seu usuário"
+                                               promptText="Digite seu Email"
                                                styleClass="text-field-custom"/>
                                 </HBox>
                             </VBox>

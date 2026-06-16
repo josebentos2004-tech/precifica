@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<ScrollPane fitToWidth="true" fitToHeight="true"
+            xmlns="http://javafx.com/javafx/21"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project30.EditarProdutoFabricadoController"
+            style="-fx-background-color: transparent; -fx-background: transparent;">
+
+    <VBox fx:id="rootContainer" spacing="20"
+          style="-fx-background-color: #F8FAFC; -fx-padding: 30;">
+
+        <HBox spacing="30" VBox.vgrow="ALWAYS">
+
+            <!-- FORMULÁRIO -->
+            <VBox spacing="25" styleClass="form-card" HBox.hgrow="ALWAYS">
+
+                <HBox alignment="CENTER_LEFT" spacing="10">
+                    <FontIcon iconLiteral="bi-pencil-square" iconColor="#081B5F" iconSize="22"/>
+                    <Label text="Editar Produto Fabricado" styleClass="form-card-title"/>
+                </HBox>
+
+                <!-- DADOS PRODUTO -->
+                <VBox spacing="20">
+                    <Label text="Dados do Produto" styleClass="section-title"/>
+                    <GridPane hgap="20" vgap="18">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="50"/>
+                            <ColumnConstraints percentWidth="50"/>
+                        </columnConstraints>
+                        <VBox spacing="6" GridPane.columnIndex="0">
+                            <Label text="Nome do Produto" styleClass="input-label"/>
+                            <TextField fx:id="txtproduto" promptText="Ex: Pão artesanal" styleClass="custom-text-field"/>
+                        </VBox>
+                        <VBox spacing="6" GridPane.columnIndex="1">
+                            <Label text="Quantidade Total Produzida (Unidades)" styleClass="input-label"/>
+                            <TextField fx:id="txtQuantidadeTotal" promptText="Ex: 1000" text="1" styleClass="custom-text-field"/>
+                        </VBox>
+                    </GridPane>
+                </VBox>
+
+                <!-- INSUMOS DINÂMICOS -->
+                <VBox spacing="12">
+                    <Label text="Insumos (Matérias-Primas)" styleClass="section-title"/>
+                    <HBox alignment="CENTER_LEFT">
+                        <FontIcon iconLiteral="bi-plus-circle" iconColor="#62B948" iconSize="16"/>
+                        <Button text="+ Adicionar Insumo" styleClass="add-cost-button" onAction="#adicionarInsumo"/>
+                    </HBox>
+                    <VBox fx:id="insumosContainer" spacing="10"/>
+                </VBox>
+
+                <!-- CUSTOS DE PRODUÇÃO DINÂMICOS -->
+                <VBox spacing="12">
+                    <Label text="Custos de Produção (Kz)" styleClass="section-title"/>
+                    <HBox alignment="CENTER_LEFT">
+                        <FontIcon iconLiteral="bi-plus-circle" iconColor="#62B948" iconSize="16"/>
+                        <Button text="+ Adicionar Custo" styleClass="add-cost-button" onAction="#adicionarCustoProducao"/>
+                    </HBox>
+                    <VBox fx:id="custosContainer" spacing="10"/>
+                </VBox>
+
+                <!-- LUCRO -->
+                <VBox spacing="10">
+                    <HBox alignment="CENTER_LEFT">
+                        <Label text="Lucro desejado (%)" styleClass="section-title"/>
+                        <Region HBox.hgrow="ALWAYS"/>
+                        <Label fx:id="lblLucroPercentual" text="45%" styleClass="profit-percent"/>
+                    </HBox>
+                    <Slider fx:id="sliderLucro" min="0" max="100" value="45"/>
+                </VBox>
+
+                <!-- BOTÕES -->
+                <HBox alignment="CENTER_RIGHT" spacing="15">
+                    <Button fx:id="btnAnterior" onAction="#voltarParaListagem" text="Anterior" styleClass="nav-button-secondary">
+                        <graphic><FontIcon iconLiteral="bi-arrow-left" iconColor="#475569" iconSize="14"/></graphic>
+                    </Button>
+                    <Button fx:id="btnAtualizar" onAction="#atualizarProduto" text="Atualizar Produto" styleClass="save-button">
+                        <graphic><FontIcon iconLiteral="bi-check-circle" iconColor="white" iconSize="14"/></graphic>
+                    </Button>
+                </HBox>
+            </VBox>
+
+            <!-- RESULTADO -->
+            <VBox prefWidth="350" spacing="25" styleClass="result-card">
+                <Label text="Resultado" styleClass="result-title"/>
+                <VBox spacing="18">
+                    <VBox spacing="5">
+                        <Label text="Preço mínimo" styleClass="result-label"/>
+                        <Label fx:id="lblPrecoMinimo" text="0,00 Kz" styleClass="result-value"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Preço recomendado" styleClass="result-label"/>
+                        <Label fx:id="lblPrecoRecomendado" text="0,00 Kz" styleClass="result-value"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Lucro por unidade" styleClass="result-label"/>
+                        <Label fx:id="lblLucroUnidade" text="0,00 Kz" styleClass="result-value"/>
+                    </VBox>
+                    <VBox spacing="5">
+                        <Label text="Margem de lucro" styleClass="result-label"/>
+                        <Label fx:id="lblMargemLucro" text="45%" styleClass="result-value"/>
+                    </VBox>
+                </VBox>
+                <Region VBox.vgrow="ALWAYS"/>
+            </VBox>
+        </HBox>
+    </VBox>
+</ScrollPane>

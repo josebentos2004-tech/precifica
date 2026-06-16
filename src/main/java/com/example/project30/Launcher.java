@@ -17,8 +17,21 @@ public class Launcher {
           // modo fullscreen
 
         primaryStage.show();
+
     }
     public static void main(String[] args) {
+
+
+
+
+
+
+
+
+
+
+
+
         Application.launch(HelloApplication.class, args);
     }
 }

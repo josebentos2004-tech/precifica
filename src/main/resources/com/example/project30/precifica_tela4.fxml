@@ -4,14 +4,17 @@
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <VBox alignment="TOP_LEFT" spacing="25" style="-fx-padding: 35;" stylesheets="@css/precifica_tela4.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.precifica_tela4">
 
-    <Label styleClass="flow-title" text="Definição de Lucro" />
 
-    <HBox alignment="TOP_LEFT" spacing="30" VBox.vgrow="ALWAYS">
+
+    <HBox alignment="TOP_CENTER" spacing="30" VBox.vgrow="ALWAYS">
         <children>
 
-            <VBox maxWidth="550" spacing="22" styleClass="form-card" HBox.hgrow="ALWAYS">
+         <!--  <VBox maxWidth="550" spacing="22" styleClass="form-card" HBox.hgrow="ALWAYS">
                 <children>
 
                     <Label styleClass="form-card-title-lucro" text="Quanto você quer ganhar?" />
@@ -63,20 +66,24 @@
                     </HBox>
 
                 </children>
-            </VBox>
+            </VBox>-->
 
             <VBox alignment="CENTER" maxWidth="450" styleClass="info-dashed-card" HBox.hgrow="ALWAYS">
+                <padding>
+                    <Insets top="40" right="40" bottom="0" left="40"/>
+                </padding>
+                <ImageView fitHeight="550" fitWidth="450" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../sucesso.jpg"/>
+                    </image>
+                </ImageView>
+                <Button fx:id="btnSubmeter" onAction="#Voltar" styleClass="submit-button" text="Voltar">
+                    <graphic>
+                        <FontIcon iconColor="white" iconLiteral="bi-check-circle" iconSize="14" />
+                    </graphic>
+                </Button>
                 <children>
-                    <VBox alignment="CENTER" spacing="15" style="-fx-padding: 30;">
-                        <children>
-                            <FontIcon iconColor="#081B5F" iconLiteral="bi-bullseye" iconSize="42" />
 
-                            <Label styleClass="dashed-card-title" text="Ponto de Equilíbrio" />
-
-                            <Label alignment="CENTER" textAlignment="CENTER" wrapText="true" styleClass="dashed-card-text"
-                                   text="O sistema avisa se a sua margem está abaixo da média do setor para garantir a sustentabilidade do negócio." />
-                        </children>
-                    </VBox>
                 </children>
             </VBox>
 

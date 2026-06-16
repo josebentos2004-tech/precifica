@@ -3,9 +3,10 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/javafx/FXML2.java to edit this template
  */
 package com.example.project30;
-import  database.Conexao;
-import  java.sql.Connection;
-import  java.sql.PreparedStatement;
+
+import database.Conexao;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -24,23 +25,15 @@ import javafx.scene.control.Button;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
-/**
- *
- * @author Cristiano
- */
 public class LoginController implements Initializable {
-    
-    
-    
+
     @FXML
     private TextField usuarioCampo;
-    
     @FXML
     private PasswordField senhaCampo;
-    
     @FXML
     private Button btnEntrar;
-    
+
     @FXML
     private void hoverOn(MouseEvent e) {
         btnEntrar.setStyle("-fx-background-color: #166b38; -fx-text-fill: white;");
@@ -53,12 +46,10 @@ public class LoginController implements Initializable {
 
     @FXML
     private void btnEntrarAction(ActionEvent event) {
-
         String usuario = usuarioCampo.getText();
         String senha = senhaCampo.getText();
 
         if (usuario.trim().isEmpty() || senha.isEmpty()) {
-
             mostrarAlerta("Informação", "Preencha os dados!");
             return;
         }
@@ -74,19 +65,22 @@ public class LoginController implements Initializable {
             var rs = stmt.executeQuery();
 
             if (rs.next()) {
-
-                // 🔥 CRIAR USER LOGADO
+                // Cria o objeto User com os dados do banco
                 User user = new User(
                         rs.getInt("id"),
                         rs.getString("nome"),
                         rs.getString("email"),
-                        rs.getString("nif")
+                        rs.getString("nif"),
+                        rs.getString("telefone")
                 );
 
-                ScreenManager.mostrarAlerta("Sucesso","Logado com sucesso");
+                // 🔥 ARMAZENA NA SESSÃO GLOBAL
+                SessaoUsuario.getInstancia().setUsuario(user);
 
-                // 🔥 IR PARA DASHBOARD COM DADOS
-                openDashboard(event, user);
+                mostrarAlerta("Sucesso", "Logado com sucesso");
+
+                // Abre o dashboard (não precisa mais passar o user)
+                openDashboard(event);
 
             } else {
                 mostrarAlerta("Erro", "Usuário ou senha incorretos!");
@@ -98,51 +92,36 @@ public class LoginController implements Initializable {
         }
     }
 
-
-    public   void  mostrarAlerta(String titulo, String msg){
-        Alert alert=new Alert(AlertType.INFORMATION);
+    public void mostrarAlerta(String titulo, String msg) {
+        Alert alert = new Alert(AlertType.INFORMATION);
         alert.setTitle(titulo);
         alert.setContentText(msg);
         alert.showAndWait();
     }
-    private void openDashboard(ActionEvent event, User user) throws IOException {
 
+    private void openDashboard(ActionEvent event) throws IOException {
         FXMLLoader loader = new FXMLLoader(
                 getClass().getResource("dashboard.fxml")
         );
-
         Parent root = loader.load();
 
-        DashboardController controller = loader.getController();
+        // Não precisa mais enviar o user via controller
+        // O DashboardController acessará diretamente SessaoUsuario
 
-        // ENVIAR USER PARA DASHBOARD
-        controller.setUser(user);
-
-        Stage stage = (Stage) ((Node) event.getSource())
-                .getScene()
-                .getWindow();
-
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
         stage.setScene(new Scene(root));
         stage.setMaximized(true);
         stage.show();
     }
+
     @FXML
     private void irParaCadastro(ActionEvent event) throws IOException {
-
-        Stage stage =
-                (Stage) ((Node) event.getSource())
-                        .getScene()
-                        .getWindow();
-
-        ScreenManager.changeScreen(
-                stage,
-                "cadastrofuncio.fxml"
-        );
+        Stage stage = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        ScreenManager.changeScreen(stage, "cadastrofuncio.fxml");
     }
 
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-    }    
-    
+        // Inicialização, se necessário
+    }
 }

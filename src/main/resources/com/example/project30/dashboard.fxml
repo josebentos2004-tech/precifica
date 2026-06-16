@@ -1,26 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 <?import org.kordamp.ikonli.javafx.*?>
+<?import javafx.scene.chart.PieChart?>
 
+<?import javafx.scene.control.cell.PropertyValueFactory?>
 <BorderPane prefHeight="600" prefWidth="800" stylesheets="@css/dashboard.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.DashboardController">
 
-    <!-- SIDEBAR -->
     <left>
         <VBox prefWidth="250" spacing="20" styleClass="sidebar">
-
-            <!-- Logo -->
             <HBox alignment="CENTER_LEFT" spacing="10">
-
-                <Label styleClass="logo" text="Precifica" />
+                <ImageView fitHeight="100.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                    <image>
+                        <Image url="@../../../logoM.png" />
+                    </image>
+                </ImageView>
             </HBox>
-
-
-
-            <!-- Menu -->
-            <Button onAction="#abrirDashboard" prefHeight="49.0" prefWidth="238.0" styleClass="menu-button" text="Dashboard">
-                <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
+            <Button onAction="#abrirDashboard" styleClass="menu-button" text="Dashboard">
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-speedometer2" iconSize="20" /></graphic>
             </Button>
             <Button onAction="#abrirproduto" styleClass="menu-button" text="Total de Produtos">
@@ -29,14 +27,14 @@
             <Button onAction="#abrirTelaPrecificacao" styleClass="menu-button" text="Precificação">
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-cash-stack" iconSize="20" /></graphic>
             </Button>
-            <Button styleClass="menu-button" text="Perfil">
+            <Button onAction="#abrirperfil" styleClass="menu-button" text="Perfil">
                 <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-person-circle" iconSize="20" /></graphic>
             </Button>
-
+            <Button onAction="#abrirReciclagem" styleClass="menu-button" text="Reciclagem">
+                <graphic><FontIcon iconColor="#62B948" iconLiteral="bi-arrow-repeat" iconSize="20" /></graphic>
+            </Button>
             <Region VBox.vgrow="ALWAYS" />
-
-            <Label styleClass="profile-label" text="Gelson Santos (Administrador)" />
-
+            <Label fx:id="nom" styleClass="profile-label" text="Bem-vindo..." />
             <Button fx:id="logout" onAction="#logoutL" styleClass="logout-button" text="Sair">
                 <graphic><FontIcon iconColor="#FFFF" iconLiteral="bi-box-arrow-right" iconSize="18" /></graphic>
             </Button>
@@ -46,76 +44,79 @@
     <center>
         <StackPane fx:id="conteudoDinamico" alignment="TOP_LEFT" styleClass="main-dynamic-container">
             <children>
-
-                <ScrollPane fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent; -fx-padding: 0;" vbarPolicy="AS_NEEDED">
+                <ScrollPane fx:id="dashboardScrollPane" fitToWidth="true" hbarPolicy="NEVER" style="-fx-background: transparent; -fx-background-color: transparent; -fx-padding: 0;" vbarPolicy="AS_NEEDED">
                     <content>
                         <VBox alignment="TOP_LEFT" spacing="30" style="-fx-padding: 35;">
-
+                            <!-- Cabeçalho -->
                             <HBox alignment="CENTER_LEFT" spacing="20">
                                 <VBox spacing="5" HBox.hgrow="ALWAYS">
-                                    <Label fx:id="name" styleClass="header-title" text="Bem-vindo, Gelson 👋" />
+                                    <Label fx:id="name" styleClass="header-title" />
                                     <Label styleClass="header-subtitle" text="Controle os seus preços e aumente o lucro." />
                                 </VBox>
                                 <VBox alignment="TOP_RIGHT" spacing="5" style="-fx-padding: 0 20 0 0;">
-                                    <Label fx:id="nif" styleClass="header-nif" text="NIF: 009090961BG" />
+                                    <Label fx:id="nif" styleClass="header-nif" />
                                     <Label styleClass="header-plano" text="Plano: Gratuito" />
                                 </VBox>
                             </HBox>
 
+                            <!-- Cards -->
                             <HBox alignment="CENTER_LEFT" spacing="20">
                                 <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
                                     <FontIcon iconColor="#2563EB" iconLiteral="bi-box-seam" iconSize="24" />
                                     <Label styleClass="card-dashboard-title" text="Produtos" />
-                                    <Label styleClass="card-value" text="20" />
+                                    <Label fx:id="totalProdutosLabel" styleClass="card-value" text="0" />
                                 </VBox>
-
                                 <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
                                     <FontIcon iconColor="#22C55E" iconLiteral="bi-graph-up" iconSize="24" />
                                     <Label styleClass="card-dashboard-title" text="Lucro Estimado" />
-                                    <Label styleClass="card-value" text="250.000 kz" />
+                                    <Label fx:id="lucroEstimadoLabel" styleClass="card-value" text="0 kz" />
                                 </VBox>
-
-                                <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
-                                    <FontIcon iconColor="#F59E0B" iconLiteral="bi-wallet2" iconSize="24" />
-                                    <Label styleClass="card-dashboard-title" text="Custos Fixos" />
-                                    <Label styleClass="card-value" text="100.000 kz" />
-                                </VBox>
-
                                 <VBox maxWidth="1.7976931348623157E308" styleClass="card-alert-dashboard" HBox.hgrow="ALWAYS">
                                     <FontIcon iconColor="#EF4444" iconLiteral="bi-exclamation-triangle" iconSize="24" />
-                                    <Label styleClass="card-dashboard-title" text="Alertas" />
-                                    <Label styleClass="card-value" text="3" />
+                                    <Label styleClass="card-dashboard-title" text="Alertas (sem lucro)" />
+                                    <Label fx:id="alertasLabel" styleClass="card-value" text="0" />
                                 </VBox>
                             </HBox>
 
+                            <!-- Ações rápidas
                             <VBox spacing="15">
                                 <Label styleClass="section-title" text="Ações rápidas" />
                                 <HBox alignment="CENTER_LEFT" spacing="15">
-                                    <Button styleClass="action-button" text="Novo Produto">
+                                    <Button onAction="#abrirTelaPrecificacao" styleClass="action-button" text="Novo Produto">
                                         <graphic><FontIcon iconLiteral="bi-plus-circle" iconSize="18" /></graphic>
                                     </Button>
-                                    <Button styleClass="action-button" text="Calcular Preço">
-                                        <graphic><FontIcon iconLiteral="bi-calculator" iconSize="18" /></graphic>
-                                    </Button>
-                                    <Button styleClass="action-button" text="Relatório">
-                                        <graphic><FontIcon iconLiteral="bi-file-earmark-text" iconSize="18" /></graphic>
+                                    <Button onAction="#abrirReciclagem" styleClass="action-button" text="Reciclagem">
+                                        <graphic><FontIcon iconLiteral="bi-arrow-repeat" iconSize="18" /></graphic>
                                     </Button>
                                 </HBox>
-                            </VBox>
+                            </VBox>-->
 
-                            <VBox maxWidth="500" spacing="12" styleClass="card-resumo">
-                                <Label styleClass="section-title-resumo" text="Resumo de Precificação" />
-                                <VBox spacing="8" style="-fx-padding: 5 0 0 5;">
-                                    <Label styleClass="resumo-item" text="• Arroz 25kg → margem baixa" />
-                                    <Label styleClass="resumo-item" text="• Refrigerante → preço abaixo do custo" />
-                                    <Label styleClass="resumo-item" text="• Sabão → lucro ideal" />
+                            <!-- Gráfico + Tabela -->
+                            <HBox spacing="20" VBox.vgrow="ALWAYS">
+                                <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="card-resumo">
+                                    <Label styleClass="section-title-resumo" text="Lucro por Produto (%)" />
+                                    <PieChart fx:id="lucroPieChart" prefHeight="250" prefWidth="300" />
                                 </VBox>
-                            </VBox>
-
+                                <VBox spacing="10" HBox.hgrow="ALWAYS" styleClass="card-resumo">
+                                    <Label styleClass="section-title-resumo" text="Produtos com Maior Lucro" />
+                                    <TableView fx:id="topLucroTable" styleClass="top-table" prefHeight="250">
+                                        <columns>
+                                            <TableColumn text="Produto" prefWidth="120">
+                                                <cellValueFactory><PropertyValueFactory property="nome" /></cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn fx:id="colunaLucro" text="Lucro (KZ)" prefWidth="100">
+                                                <cellValueFactory><PropertyValueFactory property="lucro" /></cellValueFactory>
+                                            </TableColumn>
+                                            <TableColumn text="Margem (%)" prefWidth="80">
+                                                <cellValueFactory><PropertyValueFactory property="margem" /></cellValueFactory>
+                                            </TableColumn>
+                                        </columns>
+                                    </TableView>
+                                </VBox>
+                            </HBox>
                         </VBox>
                     </content>
                 </ScrollPane>
-
             </children>
         </StackPane>
     </center>

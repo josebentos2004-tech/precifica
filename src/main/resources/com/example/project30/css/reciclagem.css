@@ -1,0 +1,256 @@
+/* ==========================================================================
+   CONFIGURAÇÕES GERAIS - TEMA RECICLAGEM
+   ========================================================================== */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-background-color: #f0f9f0;
+}
+
+/* Banner Superior - Verde Sustentável */
+.header-banner {
+    -fx-background-color: linear-gradient(from 0% 0% to 100% 0%, #1b5e20, #2e7d32);
+    -fx-background-radius: 0 0 12px 12px;
+    -fx-effect: dropshadow(three-pass-box, rgba(27, 94, 32, 0.15), 12, 0, 0, 4);
+}
+.header-title {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+.header-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #c8e6c9;
+}
+.icon-kz-main {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-min-width: 36;
+    -fx-min-height: 36;
+    -fx-max-width: 36;
+    -fx-max-height: 36;
+}
+.icon-kz-text {
+    -fx-text-fill: #2e7d32;
+    -fx-font-weight: bold;
+    -fx-font-size: 14px;
+}
+
+/* Títulos de Seções */
+.section-title {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1b5e20;
+}
+
+/* ==========================================================================
+   CARDS DE INDICADORES (DESIGN RECICLADO)
+   ========================================================================== */
+.card {
+    -fx-background-color: #ffffff;
+    -fx-padding: 16px;
+    -fx-background-radius: 10px;
+    -fx-border-color: #a5d6a7;
+    -fx-border-radius: 10px;
+    -fx-border-width: 1px;
+    -fx-effect: dropshadow(three-pass-box, rgba(27, 94, 32, 0.05), 8, 0, 0, 2);
+}
+.card-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: #558b2f;
+    -fx-font-weight: bold;
+}
+.card-number {
+    -fx-font-size: 16px;
+    -fx-text-fill: #1b5e20;
+    -fx-font-weight: bold;
+}
+
+/* Badges CSS - Tema Reciclagem */
+.card-badge {
+    -fx-min-width: 34;
+    -fx-min-height: 34;
+    -fx-max-width: 34;
+    -fx-max-height: 34;
+    -fx-background-radius: 8px;
+}
+.badge-text {
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+
+/* Variações de Cores dos Badges - Paleta Sustentável */
+.badge-green-light {
+    -fx-background-color: #e8f5e9;
+}
+.badge-green-light .badge-text {
+    -fx-text-fill: #2e7d32;
+}
+
+.badge-green-dark {
+    -fx-background-color: #c8e6c9;
+}
+.badge-green-dark .badge-text {
+    -fx-text-fill: #1b5e20;
+}
+
+.badge-recycle {
+    -fx-background-color: #fff3e0;
+}
+.badge-recycle .badge-text {
+    -fx-text-fill: #ef6c00;
+}
+
+.badge-leaf {
+    -fx-background-color: #e0f2f1;
+}
+.badge-leaf .badge-text {
+    -fx-text-fill: #00695c;
+}
+
+/* ==========================================================================
+   INPUTS E BOTÕES - ESTILO ECOLÓGICO
+   ========================================================================== */
+.form-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #81c784;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 9px 14px;
+    -fx-font-size: 13px;
+    -fx-text-fill: #2e3b2e;
+}
+.form-input:focused {
+    -fx-border-color: #2e7d32;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 125, 50, 0.12), 6, 0, 0, 0);
+}
+
+/* Botão de Pesquisa Customizado */
+.btn-search-css {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-background-radius: 6px;
+    -fx-cursor: hand;
+    -fx-padding: 0 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(46, 125, 50, 0.15), 6, 0, 0, 2);
+}
+.btn-search-css:hover {
+    -fx-background-color: #1b5e20;
+}
+.btn-search-css:pressed {
+    -fx-background-color: #0d3b0f;
+}
+
+/* ==========================================================================
+   TABELA CUSTOMIZADA - TEMA RECICLAGEM
+   ========================================================================== */
+.custom-table {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 8px;
+    -fx-border-radius: 8px;
+    -fx-border-color: #a5d6a7;
+}
+.custom-table .column-header-background {
+    -fx-background-color: linear-gradient(to bottom, #e8f5e9, #c8e6c9);
+    -fx-background-radius: 8px 8px 0 0;
+}
+.custom-table .column-header {
+    -fx-background-color: transparent;
+    -fx-size: 38;
+    -fx-border-color: transparent #c8e6c9 transparent transparent;
+}
+.custom-table .column-header .label {
+    -fx-text-fill: #1b5e20;
+    -fx-font-weight: bold;
+    -fx-font-size: 12px;
+}
+.custom-table .table-row-cell {
+    -fx-background-color: transparent;
+    -fx-border-color: transparent transparent #e8f5e9 transparent;
+    -fx-size: 36;
+}
+.custom-table .table-row-cell:filled:hover {
+    -fx-background-color: #f1f8e9;
+}
+
+/* Ícones de reciclagem para ações (opcional) */
+.recycle-icon {
+    -fx-background-color: #2e7d32;
+    -fx-text-fill: white;
+    -fx-background-radius: 4px;
+    -fx-padding: 4 8 4 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+
+/* Badge para produtos reciclados */
+.badge-recycled {
+    -fx-background-color: #66bb6a;
+    -fx-text-fill: white;
+    -fx-padding: 2 6 2 6;
+    -fx-background-radius: 4px;
+    -fx-font-size: 10px;
+}
+
+/* Efeito gradiente azul para linha selecionada */
+.custom-table .table-row-cell:filled:selected {
+    -fx-background-color: linear-gradient(to right, #1976d2, #42a5f5);
+}
+
+.custom-table .table-row-cell:filled:selected .text {
+    -fx-fill: white !important;
+    -fx-font-weight: bold;
+}
+
+.custom-table .table-row-cell:filled:selected .table-cell {
+    -fx-text-fill: white;
+}
+
+/* Efeito de transição suave */
+.custom-table .table-row-cell {
+    -fx-transition: all 0.2s ease;
+}
+
+/* Botão Restaurar (Verde) */
+.action-button-restore {
+    -fx-background-color: #4caf50;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.action-button-restore:hover {
+    -fx-background-color: #45a049;
+}
+
+.action-button-restore:pressed {
+    -fx-background-color: #3d8b40;
+}
+
+/* Botão Excluir Definitivo (Vermelho) - opcional */
+.action-button-delete-permanent {
+    -fx-background-color: #f44336;
+    -fx-text-fill: white;
+    -fx-font-size: 12px;
+    -fx-padding: 5 10 5 10;
+    -fx-background-radius: 4px;
+    -fx-cursor: hand;
+}
+
+.action-button-delete-permanent:hover {
+    -fx-background-color: #d32f2f;
+}
+
+.action-button-delete-permanent:pressed {
+    -fx-background-color: #b71c1c;
+}
+
+/* Container dos botões */
+.action-buttons-container {
+    -fx-alignment: center;
+    -fx-spacing: 8;
+}

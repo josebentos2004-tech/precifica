@@ -1,0 +1,249 @@
+/* Definições de base e fontes do Painel */
+.root {
+    -fx-font-family: "Segoe UI", Helvetica, Arial, sans-serif;
+    -fx-background-color: #f8faff;
+}
+
+/* --- BARRA LATERAL (SIDEBAR) --- */
+.sidebar {
+    -fx-background-color: #031c30; /* Azul escuro idêntico à imagem */
+    -fx-padding: 20px 0px 20px 0px;
+}
+
+.logo-container {
+    -fx-padding: 0px 20px 30px 20px;
+    -fx-alignment: center-left;
+    -fx-spacing: 10px;
+}
+.logo-icon {
+    -fx-icon-color: #22c55e; /* Ícone Verde */
+}
+.logo-text {
+    -fx-text-fill: #ffffff;
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+}
+
+.nav-container {
+    -fx-padding: 0px 12px 0px 12px;
+}
+
+/* Botões da navegação lateral */
+.nav-button {
+    -fx-background-color: transparent;
+    -fx-background-radius: 8px;
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 12px 16px;
+    -fx-graphic-text-gap: 12px;
+    -fx-cursor: hand;
+    -fx-max-width: infinity;
+}
+.nav-button .ikonli-font-icon {
+    -fx-icon-color: #94a3b8;
+}
+
+.nav-button:hover {
+    -fx-background-color: #0b2943;
+    -fx-text-fill: #ffffff;
+}
+.nav-button:hover .ikonli-font-icon {
+    -fx-icon-color: #ffffff;
+}
+
+/* Estado Ativo: Aba Perfil Selecionada */
+.nav-button-active {
+    -fx-background-color: #053344; /* Fundo esverdeado/azulado sutil */
+    -fx-text-fill: #ffffff;
+    -fx-font-weight: bold;
+    -fx-border-color: transparent transparent transparent #22c55e;
+    -fx-border-width: 0 0 0 4px;
+}
+.nav-button-active .ikonli-font-icon {
+    -fx-icon-color: #22c55e;
+}
+
+/* Rodapé do Menu */
+.sidebar-footer {
+    -fx-padding: 20px 15px 0px 15px;
+    -fx-border-color: #0b2943 transparent transparent transparent;
+    -fx-border-width: 1px 0 0 0;
+    -fx-spacing: 15px;
+}
+.user-footer-name {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 11px;
+}
+.footer-more-icon {
+    -fx-icon-color: #94a3b8;
+}
+
+.logout-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #f87171; /* Cor vermelha/laranja do botão Sair */
+    -fx-font-size: 14px;
+    -fx-alignment: center-left;
+    -fx-padding: 8px 10px;
+    -fx-graphic-text-gap: 10px;
+    -fx-cursor: hand;
+    -fx-border-color: #ea580c;
+    -fx-border-radius: 6px;
+    -fx-border-width: 0.8px;
+}
+.logout-button .ikonli-font-icon {
+    -fx-icon-color: #ea580c;
+}
+
+/* --- ÁREA DE CONTEÚDO PRINCIPAL --- */
+.main-content {
+    -fx-padding: 30px;
+    -fx-background-color: #f8fafe;
+}
+
+.header-container {
+    -fx-padding: 0px 0px 30px 0px;
+}
+.main-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+}
+.main-subtitle {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 13px;
+    -fx-padding: 5px 0px 0px 0px;
+}
+
+/* Cabeçalho superior direito do usuário */
+.top-user-profile {
+    -fx-cursor: hand;
+}
+.top-avatar-icon {
+    -fx-icon-color: #64748b;
+}
+.top-user-email {
+    -fx-text-fill: #334155;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
+}
+.top-user-plan {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+
+/* --- CARDS DE PERFIL --- */
+.cards-container {
+    -fx-alignment: top-center;
+}
+
+.profile-card {
+    -fx-background-color: #ffffff;
+    -fx-background-radius: 12px;
+    -fx-padding: 24px;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 12px;
+    -fx-border-width: 1px;
+    -fx-min-width: 230px;
+    -fx-max-width: 320px;
+    /* Efeito suave de sombra (opcional no JavaFX) */
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.02), 10, 0, 0, 4);
+}
+
+.card-title {
+    -fx-text-fill: #0f172a;
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-padding: 0px 0px 20px 0px;
+}
+
+/* Conteiner flexível do meio do card */
+.data-field-group {
+    -fx-padding: 10px 0px 20px 0px;
+}
+
+/* Visualização de dados (Card 1) */
+.field-block {
+    -fx-padding: 0px 0px 18px 0px;
+}
+.field-label {
+    -fx-text-fill: #94a3b8;
+    -fx-font-size: 12px;
+    -fx-font-weight: 500;
+}
+.field-value {
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 0px 0px 0px;
+}
+
+/* Subtítulo de seções internas (Card 2) */
+.field-section-subtitle {
+    -fx-text-fill: #1e293b;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 0px 0px 5px 0px;
+}
+
+/* Inputs de formulário (Card 2) */
+.input-block {
+    -fx-spacing: 5px;
+}
+.input-label {
+    -fx-text-fill: #64748b;
+    -fx-font-size: 11px;
+}
+.form-input {
+    -fx-background-color: #ffffff;
+    -fx-border-color: #cbd5e1;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-padding: 8px 10px;
+    -fx-text-fill: #334155;
+}
+.form-input:focused {
+    -fx-border-color: #22c55e;
+}
+
+/* Linhas de benefícios (Card 3) */
+.benefit-row {
+    -fx-padding: 2px 0px;
+}
+.benefit-icon {
+    -fx-icon-color: #22c55e; /* Checkmark Verde */
+}
+.benefit-text {
+    -fx-text-fill: #334155;
+    -fx-font-size: 13px;
+}
+
+/* Badge do plano gratuito */
+.badge-green {
+    -fx-background-color: #dcfce7;
+    -fx-text-fill: #15803d;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+    -fx-padding: 4px 8px;
+    -fx-background-radius: 6px;
+}
+
+/* --- BOTÕES DOS CARDS --- */
+.card-button {
+    -fx-background-color: transparent;
+    -fx-border-color: #16a34a; /* Borda Verde */
+    -fx-border-width: 1px;
+    -fx-border-radius: 6px;
+    -fx-background-radius: 6px;
+    -fx-text-fill: #16a34a;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-padding: 10px 0px;
+    -fx-cursor: hand;
+    -fx-alignment: center;
+}
+
+.card-button:hover {
+    -fx-background-color: #16a34a;
+    -fx-text-fill: #ffffff;
+}

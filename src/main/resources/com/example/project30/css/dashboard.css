@@ -1,25 +1,27 @@
 /* ==========================================================================
-   1. CONFIGURAÇÃO GLOBAL (ROOT)
+   1. GLOBAL
    ========================================================================== */
 .root {
-    -fx-background-color: #F8FAFC; /* Fundo cinza-claro moderno para todo o app */
+    -fx-background-color: #F8FAFC;
 }
 
 /* ==========================================================================
-   2. ESTRUTURA DA SIDEBAR (MENU LATERAL REFORMULADO)
+   2. SIDEBAR (MENU LATERAL)
    ========================================================================== */
 .sidebar {
-    -fx-background-color: #081B5F; /* Azul escuro principal da marca */
-    -fx-padding: 30px 20px;       /* Mais respiro nas bordas internas */
-    -fx-spacing: 12px;            /* Espaçamento equilibrado entre os botões */
+    -fx-background-image: url("/login.jpg");
+    -fx-background-size: cover;
+    -fx-background-position: center;
+    -fx-pref-width: 300;
+    -fx-padding: 30px 20px;
+    -fx-spacing: 12px;
 }
 
-/* Nome do Sistema */
 .logo {
-    -fx-text-fill: #FFFFFF;
-    -fx-font-size: 28px;          /* Destaque ideal para a marca */
+    -fx-text-fill: white;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-padding: 0 0 15px 12px;   /* Afastamento do primeiro botão do menu */
+    -fx-padding: 0 0 15px 12px;
 }
 
 .subtitle {
@@ -27,44 +29,39 @@
     -fx-font-size: 13px;
 }
 
-/* Botão Padrão do Menu (Inativo) */
 .menu-button {
     -fx-background-color: transparent;
-    -fx-text-fill: #94A3B8;        /* Cinza azulado suave muito elegante */
-    -fx-font-size: 16px;           /* Letras maiores e mais profissionais */
-    -fx-font-weight: 500;          /* Peso de leitura limpo */
+    -fx-text-fill: #94A3B8;
+    -fx-font-size: 16px;
+    -fx-font-weight: 500;
     -fx-alignment: CENTER_LEFT;
-    -fx-padding: 12px 16px;        /* Botão encorpado, fácil de clicar */
-    -fx-background-radius: 10px;   /* Cantos suaves nos botões */
+    -fx-padding: 12px 16px;
+    -fx-background-radius: 10px;
     -fx-cursor: hand;
-    -fx-max-width: Infinity;       /* Força o botão a preencher a largura útil */
+    -fx-max-width: Infinity;
 }
 
-/* Efeito ao passar o mouse nos botões do menu */
 .menu-button:hover {
-    -fx-background-color: rgba(255, 255, 255, 0.08); /* Destaque translúcido moderno */
-    -fx-text-fill: #FFFFFF;        /* O texto acende em branco puro */
+    -fx-background-color: rgba(255, 255, 255, 0.08);
+    -fx-text-fill: white;
 }
 
-/* Estado Ativo: Aplique esta classe no botão da tela que estiver aberta */
 .menu-button-active {
-    -fx-background-color: #1E40AF; /* Azul destacado ativo */
-    -fx-text-fill: #FFFFFF;        /* Texto em branco */
+    -fx-background-color: #1E40AF;
+    -fx-text-fill: white;
     -fx-font-weight: bold;
 }
 
-/* Informações do Usuário no rodapé da Sidebar */
 .profile-label {
     -fx-text-fill: #E2E8F0;
-    -fx-font-size: 14px;           /* Legível e discreto */
+    -fx-font-size: 14px;
     -fx-font-weight: 500;
     -fx-padding: 15px 0 5px 12px;
 }
 
-/* Botão Sair (Logout) */
 .logout-button {
-    -fx-background-color: rgba(239, 68, 68, 0.15); /* Vermelho suave de fundo */
-    -fx-text-fill: #F87171;                         /* Texto vermelho claro */
+    -fx-background-color: rgba(239, 68, 68, 0.15);
+    -fx-text-fill: #F87171;
     -fx-font-size: 15px;
     -fx-font-weight: bold;
     -fx-background-radius: 10px;
@@ -74,26 +71,24 @@
     -fx-cursor: hand;
 }
 
-/* Efeito ao passar o mouse no botão Sair */
 .logout-button:hover {
-    -fx-background-color: #EF4444;                 /* Vermelho sólido clássico */
-    -fx-text-fill: #FFFFFF;                         /* Letra fica branca */
+    -fx-background-color: #EF4444;
+    -fx-text-fill: white;
 }
 
 /* ==========================================================================
-   3. CONTAINER DINÂMICO CENTRAL (PAINEL BRANCO RESPONSIVO)
+   3. ÁREA CENTRAL PRINCIPAL
    ========================================================================== */
 .main-dynamic-container {
-    -fx-background-color: #FFFFFF; /* Painel do meio 100% branco */
+    -fx-background-color: white;
     -fx-background-radius: 16px;
     -fx-border-color: #E2E8F0;
     -fx-border-width: 1px;
     -fx-border-radius: 16px;
-    -fx-background-insets: 20px;   /* Margem de segurança para telas grandes */
+    -fx-background-insets: 20px;
     -fx-border-insets: 20px;
 }
 
-/* Elementos do Cabeçalho dentro do Painel */
 .header-title {
     -fx-font-size: 26px;
     -fx-font-weight: bold;
@@ -117,75 +112,112 @@
     -fx-font-weight: bold;
 }
 
-/* Títulos de Seções Gerais */
 .section-title {
-    -fx-font-size: 16px;
+    -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #1E293B;
+    -fx-text-fill: #0f172a;
+    -fx-padding: 0 0 5 0;
 }
 
 /* ==========================================================================
-   4. COMPONENTES DO DASHBOARD INICIAL
+   4. CARDS DO DASHBOARD
    ========================================================================== */
-
-/* Cards Principais (Produtos, Lucro, Custos) */
 .card-dashboard {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 12px;
-    -fx-border-color: #F1F5F9;
-    -fx-border-width: 1px;
-    -fx-border-radius: 12px;
+    -fx-background-color: white;
+    -fx-background-radius: 20px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
     -fx-padding: 20px;
+    -fx-alignment: CENTER_LEFT;
+    -fx-spacing: 8px;
     -fx-min-width: 160px;
     -fx-pref-height: 120px;
-    -fx-spacing: 8;
-    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.03), 10, 0, 0, 4);
-}
-
-/* Card Especial de Alerta */
-.card-alert-dashboard {
-    -fx-background-color: #FEF2F2;
-    -fx-background-radius: 12px;
-    -fx-padding: 20px;
-    -fx-min-width: 160px;
-    -fx-pref-height: 120px;
-    -fx-spacing: 8;
-    -fx-effect: dropshadow(three-pass-box, rgba(239, 68, 68, 0.05), 10, 0, 0, 4);
 }
 
 .card-dashboard-title {
     -fx-font-size: 14px;
-    -fx-text-fill: #64748B;
+    -fx-text-fill: #64748b;
     -fx-font-weight: bold;
 }
 
 .card-value {
     -fx-font-size: 24px;
     -fx-font-weight: bold;
-    -fx-text-fill: #0F172A;
+    -fx-text-fill: #1e293b;
 }
 
-/* Botões de Ação Rápida */
+/* ==========================================================================
+   5. GRÁFICO PIZZA
+   ========================================================================== */
+.pie-chart {
+    -fx-pie-label-visible: true;
+}
+
+/* ==========================================================================
+   6. BOTÕES DE AÇÃO RÁPIDA
+   ========================================================================== */
 .action-button {
-    -fx-background-color: #FFFFFF;
-    -fx-text-fill: #334155;
-    -fx-border-color: #E2E8F0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 8px;
-    -fx-background-radius: 8px;
-    -fx-padding: 10px 18px;
+    -fx-background-color: linear-gradient(to bottom, #62B948, #4a9e35);
+    -fx-text-fill: white;
     -fx-font-weight: bold;
+    -fx-font-size: 14px;
+    -fx-background-radius: 30px;
+    -fx-padding: 8px 20px;
     -fx-cursor: hand;
-    -fx-effect: dropshadow(three-pass-box, rgba(0, 0, 0, 0.02), 4, 0, 0, 2);
+    -fx-graphic-text-gap: 8px;
 }
 
 .action-button:hover {
-    -fx-background-color: #0F172A;
-    -fx-text-fill: #FFFFFF;
-    -fx-border-color: #0F172A;
+    -fx-background-color: linear-gradient(to bottom, #4a9e35, #3b8228);
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 6, 0, 0, 1);
 }
 
-/* Bloco de Resumo */
+.action-button:pressed {
+    -fx-translate-y: 1px;
+}
+
+.action-button .graphic {
+    -fx-icon-size: 18px;
+    -fx-icon-color: white;
+}
+
+/* ==========================================================================
+   7. TABELA TOP 5 (ESTILIZADA)
+   ========================================================================== */
+.top-table {
+    -fx-background-color: white;
+    -fx-border-color: #e2e8f0;
+    -fx-border-radius: 16px;
+    -fx-background-radius: 16px;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.03), 8, 0, 0, 2);
+}
+
+.top-table .column-header-background {
+    -fx-background-color: #081B5F;
+    -fx-background-radius: 16px 16px 0 0;
+}
+
+.top-table .column-header, .top-table .filler {
+    -fx-background-color: transparent;
+    -fx-font-weight: bold;
+    -fx-font-size: 13px;
+    -fx-text-fill: #1e293b;
+}
+
+.top-table .table-row-cell:odd {
+    -fx-background-color: #f8fafc;
+}
+
+.top-table .table-row-cell:even {
+    -fx-background-color: white;
+}
+
+.top-table .table-row-cell:hover {
+    -fx-background-color: #e0f2fe;
+}
+
+/* ==========================================================================
+   8. OUTROS (CARD RESUMO, etc.) – se necessário
+   ========================================================================== */
 .card-resumo {
     -fx-background-color: #F8FAFC;
     -fx-background-radius: 12px;
@@ -205,4 +237,3 @@
     -fx-font-size: 13px;
     -fx-text-fill: #475569;
 }
-

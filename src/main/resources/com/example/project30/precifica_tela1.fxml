@@ -32,14 +32,14 @@
 
                         <!-- Opção Selecionada: Comerciante -->
                         <VBox fx:id="btnComerciante"  onMouseClicked="#clicouComerciante" alignment="CENTER" spacing="12" styleClass="option-card, option-unselected">
-                            <FontIcon iconLiteral="bi-shop" iconSize="34" iconColor="#0F172A"/>
+                            <FontIcon iconLiteral="bi-shop" iconSize="34" iconColor="#62B948"/>
                             <Label text="Comerciante" styleClass="option-title-active"/>
                             <Label text="Compro e vendo pronto" styleClass="option-subtitle" wrapText="true" alignment="CENTER"/>
                         </VBox>
 
                         <!-- Opção Não Selecionada: Produtor -->
                         <VBox fx:id="btnProdutor" onMouseClicked="#clicouProdutor" alignment="CENTER" spacing="12" styleClass="option-card, option-unselected">
-                            <FontIcon iconLiteral="bi-building" iconSize="34" iconColor="#94A3B8"/>
+                            <FontIcon iconLiteral="bi-building" iconSize="34" iconColor="#0b2861"/>
                             <Label text="Produtor" styleClass="option-title-inactive"/>
                             <Label text="Transformo matéria-prima" styleClass="option-subtitle" wrapText="true" alignment="CENTER"/>
                         </VBox>

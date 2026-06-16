@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import java.lang.String?>
+
+<AnchorPane prefHeight="600.0" prefWidth="1000.0" stylesheets="@css/perfil.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.perfil1">
+    <children>
+        <VBox styleClass="main-content" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <!-- Header -->
+                <HBox styleClass="header-container">
+                    <children>
+                        <VBox HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="main-title" text="Meu Perfil" />
+                                <Label styleClass="main-subtitle" text="Gerencie suas informações pessoais e preferências da conta." />
+                            </children>
+                        </VBox>
+                        <HBox alignment="CENTER_RIGHT" spacing="10.0" styleClass="top-user-profile">
+                            <children>
+                                <VBox alignment="CENTER_RIGHT">
+                                    <children>
+                                        <Label fx:id="txtemail" styleClass="top-user-email" text="gelson.santos@gmail.com" />
+                                        <Label fx:id="txtplana" styleClass="top-user-plan" text="Plano: Gratuito" />
+                                    </children>
+                                </VBox>
+                            </children>
+                        </HBox>
+                    </children>
+                </HBox>
+
+                <!-- Cards Container -->
+                <HBox spacing="20.0" styleClass="cards-container" VBox.vgrow="ALWAYS">
+                    <children>
+                        <!-- Card 1: Informações Pessoais -->
+                        <VBox styleClass="profile-card" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="card-title" text="Informações Pessoais" />
+
+                                <VBox styleClass="data-field-group" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <VBox styleClass="field-block">
+                                            <children>
+                                                <Label styleClass="field-label" text="Nome Completo" />
+                                                <TextField fx:id="txtNomeCompleto" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+                                        <VBox styleClass="field-block">
+                                            <children>
+                                                <Label styleClass="field-label" text="E-mail" />
+                                                <TextField fx:id="txtEmail" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+                                        <VBox styleClass="field-block">
+                                            <children>
+                                                <Label styleClass="field-label" text="NIF" />
+                                                <TextField fx:id="txtNif" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+                                        <VBox styleClass="field-block">
+                                            <children>
+                                                <Label styleClass="field-label" text="Telefone" />
+                                                <TextField fx:id="txttelefone" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleEditarInformacoes" styleClass="card-button" text=" Habilitar/Desabilitar os Campos" />
+                            </children>
+                        </VBox>
+
+                        <!-- Card 2: Segurança -->
+                        <VBox styleClass="profile-card" HBox.hgrow="ALWAYS">
+                            <children>
+                                <Label styleClass="card-title" text="Segurança" />
+
+                                <VBox styleClass="data-field-group" spacing="12.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <Label styleClass="field-section-subtitle" text="Alterar Senha" />
+
+                                        <VBox styleClass="input-block">
+                                            <children>
+                                                <Label styleClass="input-label" text="Senha Atual" />
+                                                <PasswordField fx:id="txtSenhaAtual" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="input-block">
+                                            <children>
+                                                <Label styleClass="input-label" text="Nova Senha" />
+                                                <PasswordField fx:id="txtNovaSenha" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="input-block">
+                                            <children>
+                                                <Label styleClass="input-label" text="Confirmar Nova Senha" />
+                                                <PasswordField fx:id="txtConfirmarNovaSenha" styleClass="form-input" />
+                                            </children>
+                                        </VBox>
+
+                                        <VBox styleClass="input-block">
+                                            <children>
+
+                                            </children>
+                                        </VBox>
+                                    </children>
+                                </VBox>
+
+                                <Button maxWidth="1.7976931348623157E308" mnemonicParsing="false" onAction="#handleAtualizarPerfil" styleClass="card-button" text="Actualizar os Dados" />
+                            </children>
+                        </VBox>
+
+                        <!-- Card 3: Plano da Conta -->
+                        <VBox styleClass="profile-card" HBox.hgrow="ALWAYS">
+                            <children>
+                                <HBox alignment="CENTER_LEFT">
+                                    <children>
+                                        <Label styleClass="card-title" text="Plano da Conta" HBox.hgrow="ALWAYS" />
+                                        <Region HBox.hgrow="ALWAYS" />
+                                        <Label styleClass="badge-green" text="Gratuito" />
+                                    </children>
+                                </HBox>
+
+                                <VBox styleClass="data-field-group" spacing="16.0" VBox.vgrow="ALWAYS">
+                                    <children>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="benefit-row">
+                                            <children>
+                                                <Label styleClass="benefit-icon-check" text="✓" />
+                                                <Label styleClass="benefit-text" text="Até 50 produtos" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="benefit-row">
+                                            <children>
+                                                <Label styleClass="benefit-icon-check" text="✓" />
+                                                <Label styleClass="benefit-text" text="Precificações básicas" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="benefit-row">
+                                            <children>
+                                                <Label styleClass="benefit-icon-check" text="✓" />
+                                                <Label styleClass="benefit-text" text="Relatórios básicos" />
+                                            </children>
+                                        </HBox>
+                                        <HBox alignment="CENTER_LEFT" spacing="10.0" styleClass="benefit-row">
+                                            <children>
+                                                <Label styleClass="benefit-icon-check" text="✓" />
+                                                <Label styleClass="benefit-text" text="Suporte por e-mail" />
+                                            </children>
+                                        </HBox>
+                                    </children>
+                                </VBox>
+                            </children>
+                        </VBox>
+                    </children>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>

@@ -58,6 +58,35 @@ public class CadastrofuncioController implements Initializable {
         String ps1 = s1.getText();
         String ps2 = s2.getText();
         String tipo="Vendedor";
+        // 3. REGRA: Tamanho do Nome (Mínimo 6 caracteres e pelo menos duas palavras)
+        String nomeFormatado = nome.trim();
+        String[] palavrasNome = nomeFormatado.split("\\s+");
+        if (nomeFormatado.length() < 6 || palavrasNome.length < 2) {
+            ScreenManager.mostrarAlerta("Erro", "O nome deve ter no mínimo 6 caracteres e incluir Nome e Sobrenome!");
+            return;
+        }
+
+        // 4. REGRA: E-mail estrutural (Validar usando Regex padrão de email)
+        String regexEmail = "^[A-Za-z0-9+_.-]+@(.+)$";
+        if (!emaiL.matches(regexEmail)) {
+            ScreenManager.mostrarAlerta("Erro", "Insira um formato de e-mail válido! (exemplo@dominio.com)");
+            return;
+        }
+
+        // 5. REGRA: NIF deve aceitar apenas o formato padrão (9 números, 2 letras, 3 números)
+        String nifFormatado = niF.trim().toUpperCase();
+        if (!nifFormatado.matches("\\d{9}[A-Z]{2}\\d{3}")) {
+            ScreenManager.mostrarAlerta("Erro", "O NIF deve seguir o formato padrão! Ex: 00909755HA049");
+            return;
+        }
+
+        // 6. REGRA: Senha deve ter mais de 4 dígitos
+        if (ps1.length() <= 4) {
+            ScreenManager.mostrarAlerta("Erro", "A senha deve conter mais de 4 dígitos!");
+            return;
+        }
+
+
         if(!ps1.equals(ps2)){
             ScreenManager.mostrarAlerta("Erro","Verique as senhas inseridas");
 
@@ -92,8 +121,8 @@ public class CadastrofuncioController implements Initializable {
             smt.setString(4,tipo);
             smt.setString(5,niF);
 
-            smt.executeUpdate();
-            User user=new User(0,nome,emaiL,niF);
+            smt.executeQuery();
+            User user=new User(0,nome,emaiL,niF,"v");
 
             if(!user.getNome().isEmpty())
                 // Redireciona após cadastro bem sucedido
@@ -118,8 +147,7 @@ public class CadastrofuncioController implements Initializable {
 
         DashboardController controller = loader.getController();
 
-        // ENVIAR USER PARA DASHBOARD
-        controller.setUser(user);
+        // ENVIAR USER PARA DASHBOARd
 
         Stage stage = (Stage) ((Node) event.getSource())
                 .getScene()

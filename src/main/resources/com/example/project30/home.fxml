@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.chart.PieChart?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import org.kordamp.ikonli.javafx.FontIcon?>
+
+<ScrollPane fitToWidth="true" fitToHeight="true"
+            xmlns="http://javafx.com/javafx/17.0.12"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.project30.DashboardController"
+            style="-fx-background: transparent; -fx-background-color: transparent; -fx-padding: 0;">
+
+    <VBox alignment="TOP_LEFT" spacing="30" style="-fx-padding: 35;">
+
+        <!-- Cabeçalho -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <VBox spacing="5" HBox.hgrow="ALWAYS">
+                <Label fx:id="name" styleClass="header-title" />
+                <Label styleClass="header-subtitle" text="Visão geral dos seus produtos e lucros." />
+            </VBox>
+            <VBox alignment="TOP_RIGHT" spacing="5" style="-fx-padding: 0 20 0 0;">
+                <Label fx:id="nif" styleClass="header-nif" text="NIF: --" />
+                <Label styleClass="header-plano" text="Plano: Profissional" />
+            </VBox>
+        </HBox>
+
+        <!-- Cards -->
+        <HBox alignment="CENTER_LEFT" spacing="20">
+            <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                <FontIcon iconColor="#2563EB" iconLiteral="bi-box-seam" iconSize="28" />
+                <Label styleClass="card-dashboard-title" text="Produtos Ativos" />
+                <Label fx:id="totalProdutos" styleClass="card-value" text="0" />
+            </VBox>
+            <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                <FontIcon iconColor="#22C55E" iconLiteral="bi-graph-up" iconSize="28" />
+                <Label styleClass="card-dashboard-title" text="Receita Projetada" />
+                <Label fx:id="receitaTotal" styleClass="card-value" text="0 Kz" />
+            </VBox>
+            <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                <FontIcon iconColor="#F59E0B" iconLiteral="bi-wallet2" iconSize="28" />
+                <Label styleClass="card-dashboard-title" text="Custo Total" />
+                <Label fx:id="custoTotal" styleClass="card-value" text="0 Kz" />
+            </VBox>
+            <VBox maxWidth="1.7976931348623157E308" styleClass="card-dashboard" HBox.hgrow="ALWAYS">
+                <FontIcon iconColor="#EF4444" iconLiteral="bi-exclamation-triangle" iconSize="28" />
+                <Label styleClass="card-dashboard-title" text="Margem Crítica" />
+                <Label fx:id="produtosCriticos" styleClass="card-value" text="0" />
+            </VBox>
+        </HBox>
+
+        <!-- Gráfico -->
+        <VBox spacing="12" styleClass="card-resumo">
+            <Label styleClass="section-title-resumo" text="Distribuição de Margem de Lucro" />
+            <PieChart fx:id="graficoMargens" style="-fx-pie-label-visible: true;" prefHeight="250" />
+        </VBox>
+
+        <!-- Ações rápidas -->
+        <VBox spacing="15">
+            <Label styleClass="section-title" text="⚡ Ações rápidas" />
+            <HBox alignment="CENTER_LEFT" spacing="15">
+                <Button styleClass="action-button" onAction="#abrirPrecificacao">
+                    <graphic><FontIcon iconLiteral="bi-plus-circle" iconSize="18" /></graphic>
+                    <text>Novo Produto</text>
+                </Button>
+                <Button styleClass="action-button" onAction="#abrirReciclagem">
+                    <graphic><FontIcon iconLiteral="bi-arrow-repeat" iconSize="18" /></graphic>
+                    <text>Ver Reciclagem</text>
+                </Button>
+                <Button styleClass="action-button" onAction="#atualizarDashboard">
+                    <graphic><FontIcon iconLiteral="bi-arrow-clockwise" iconSize="18" /></graphic>
+                    <text>Atualizar Dados</text>
+                </Button>
+            </HBox>
+        </VBox>
+
+        <!-- Top 5 -->
+        <VBox spacing="15">
+            <Label styleClass="section-title" text="🏆 Top 5 Produtos Mais Lucrativos" />
+            <TableView fx:id="tabelaTopLucro" styleClass="custom-table, top-table" prefHeight="250">
+                <columns>
+                    <TableColumn text="Produto" fx:id="colNomeTop" prefWidth="250" />
+                    <TableColumn text="Lucro Unitário (Kz)" fx:id="colLucroTop" prefWidth="150" />
+                    <TableColumn text="Margem (%)" fx:id="colMargemTop" prefWidth="120" />
+                </columns>
+            </TableView>
+        </VBox>
+
+    </VBox>
+</ScrollPane>

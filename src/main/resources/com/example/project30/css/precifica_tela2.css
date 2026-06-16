@@ -1,107 +1,197 @@
+/* ==================== */
+/*        GERAL         */
+/* ==================== */
 
-
-
-/* ==========================================================================
-   6. FLUXO DE PRECIFICAÇÃO (ETAPA DO COMERCIANTE)
-   ========================================================================== */
-
-/* Título Grande do Topo */
 .flow-title {
-    -fx-font-size: 32px;
+    -fx-font-size: 28px;
     -fx-font-weight: bold;
-    -fx-text-fill: #0F172A; /* Slate 900 */
+    -fx-text-fill: #081B5F;
 }
 
-/* Card Branco do Formulário (Esquerda) */
+.flow-subtitle {
+    -fx-font-size: 13px;
+    -fx-text-fill: #64748B;
+}
+
+.section-title {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #081B5F;
+}
+
+/* ==================== */
+/*      FORM CARD       */
+/* ==================== */
+
 .form-card {
-    -fx-background-color: #FFFFFF;
+    -fx-background-color: white;
     -fx-background-radius: 16px;
-    -fx-padding: 30px;
-    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.04), 12, 0, 0, 4);
+    -fx-padding: 20px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.05), 10, 0, 0, 2);
 }
 
-/* Título interno do Card */
 .form-card-title {
     -fx-font-size: 18px;
     -fx-font-weight: bold;
-    -fx-text-fill: #081B5F; /* Azul identidade do app */
+    -fx-text-fill: #081B5F;
 }
 
-/* Legenda acima dos Inputs */
+/* ==================== */
+/*     INPUTS / COMBO   */
+/* ==================== */
+
 .input-label {
-    -fx-font-size: 13px;
-    -fx-text-fill: #64748B; /* Cinza suave profissional */
-    -fx-font-weight: 500;
-}
-
-/* TextFields customizados idênticos à imagem */
-.custom-text-field {
-    -fx-background-color: #F8FAFC; /* Fundo cinza bem clarinho */
-    -fx-background-radius: 8px;
-    -fx-border-color: #E2E8F0;
-    -fx-border-width: 1px;
-    -fx-border-radius: 8px;
-    -fx-padding: 12px 14px;
-    -fx-font-size: 14px;
+    -fx-font-size: 12px;
+    -fx-font-weight: bold;
     -fx-text-fill: #334155;
 }
 
-/* Efeito de Foco ao clicar no Input */
-.custom-text-field:focused {
-    -fx-background-color: #FFFFFF;
-    -fx-border-color: #081B5F; /* Borda assume o azul da marca */
-
+#txtproduto,.custom-text-field, .custom-combo{
+    -fx-pref-height: 45px;
+    -fx-background-color: #F8FAFC;
+    -fx-border-color: #E2E8F0;
+    -fx-border-radius: 8px;
+    -fx-background-radius: 8px;
+    -fx-padding: 0 10px;
+    -fx-font-size: 13px;
 }
 
-/* Card da Imagem (Direita) */
-.image-card {
-    -fx-background-color: #FFFFFF;
-    -fx-background-radius: 16px;
-    -fx-padding: 20px;
-    -fx-effect: dropshadow(three-pass-box, rgba(15, 23, 42, 0.04), 12, 0, 0, 4);
+.custom-text-field:focused, .custom-combo:focused {
+    -fx-border-color: #081B5F;
 }
 
+/* ==================== */
+/*      SLIDER LUCRO    */
+/* ==================== */
 
-/* --- BOTÕES DE NAVEGAÇÃO --- */
+.profit-percent {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #62B948;
+}
 
-/* Botão Principal (Seguinte) */
+.slider .track {
+    -fx-background-color: #E2E8F0;
+    -fx-pref-height: 4px;
+}
+
+.slider .thumb {
+    -fx-background-color: #62B948;
+    -fx-pref-width: 16px;
+    -fx-pref-height: 16px;
+    -fx-background-radius: 50%;
+}
+
+/* ==================== */
+/*    BOTÕES NAVEGAÇÃO  */
+/* ==================== */
+
 .nav-button-primary {
     -fx-background-color: #081B5F;
-    -fx-text-fill: #FFFFFF;
-    -fx-font-size: 14px;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-padding: 10px 22px;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 20px;
     -fx-background-radius: 8px;
     -fx-cursor: hand;
 }
 
 .nav-button-primary:hover {
-    -fx-background-color: #1E3A8A;
+    -fx-background-color: #0F2B7A;
 }
 
-.nav-button-primary:pressed {
-    -fx-background-color: #0F172A;
-}
-
-/* Botão Secundário (Anterior) */
 .nav-button-secondary {
-    -fx-background-color: #F1F5F9;
+    -fx-background-color: transparent;
     -fx-text-fill: #475569;
-    -fx-font-size: 14px;
+    -fx-font-size: 13px;
     -fx-font-weight: bold;
-    -fx-padding: 10px 22px;
+    -fx-pref-height: 38px;
+    -fx-padding: 0 20px;
     -fx-background-radius: 8px;
-    -fx-cursor: hand;
-    -fx-border-color: #E2E8F0;
-    -fx-border-width: 1px;
+    -fx-border-color: #CBD5E1;
     -fx-border-radius: 8px;
+    -fx-cursor: hand;
 }
 
 .nav-button-secondary:hover {
-    -fx-background-color: #E2E8F0;
-    -fx-text-fill: #1E293B;
+    -fx-background-color: #F1F5F9;
+    -fx-border-color: #94A3B8;
 }
 
-.nav-button-secondary:pressed {
-    -fx-background-color: #CBD5E1;
+/* ==================== */
+/*   CARD DE RESULTADO  */
+/* ==================== */
+
+VBox.result-card {
+    -fx-background-color: #081B5F;
+    -fx-background-radius: 16px;
+    -fx-padding: 20px;
+    -fx-pref-width: 300px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.12), 15, 0, 0, 4);
+}
+
+Label.result-title {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+Label.result-label {
+    -fx-font-size: 12px;
+    -fx-text-fill: rgba(255,255,255,0.7);
+}
+
+Label.result-value {
+    -fx-font-size: 24px;
+    -fx-font-weight: bold;
+    -fx-text-fill: white;
+}
+
+/* ==================== */
+/*  BOTÃO SALVAR (verde)*/
+/* ==================== */
+
+Button.save-button {
+    -fx-background-color: #62B948;
+    -fx-text-fill: white;
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-pref-height: 44px;
+    -fx-background-radius: 10px;
+    -fx-cursor: hand;
+}
+
+Button.save-button:hover {
+    -fx-background-color: #4EA63A;
+}
+/* Botão de adicionar custo personalizado */
+.add-cost-button {
+    -fx-background-color: transparent;
+    -fx-text-fill: #62B948;
+    -fx-font-weight: bold;
+    -fx-cursor: hand;
+    -fx-padding: 6 12;
+}
+.add-cost-button:hover {
+    -fx-text-fill: #0F3B9E;
+    -fx-underline: true;
+}
+
+/* Botão de remover linha de custo */
+.remove-cost-button {
+    -fx-background-color: #FEE2E2;
+    -fx-text-fill: #DC2626;
+    -fx-border-radius: 6;
+    -fx-background-radius: 6;
+    -fx-cursor: hand;
+    -fx-padding: 6 8;
+}
+.remove-cost-button:hover {
+    -fx-background-color: #FECACA;
+}
+
+/* Ajuste para o container de custos dinâmicos */
+#customCostsContainer {
+    -fx-padding: 8 0 0 0;
 }

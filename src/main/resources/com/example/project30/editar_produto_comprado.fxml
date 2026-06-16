@@ -6,30 +6,27 @@
 <?import org.kordamp.ikonli.javafx.FontIcon?>
 
 <ScrollPane fitToWidth="true" fitToHeight="true"
-            xmlns="http://javafx.com/javafx/26"
+            xmlns="http://javafx.com/javafx/21"
             xmlns:fx="http://javafx.com/fxml/1"
-            fx:controller="com.example.project30.precifica_tela2"
+            fx:controller="com.example.project30.EditarProdutoCompradoController"
             style="-fx-background-color: transparent; -fx-background: transparent;">
 
     <VBox fx:id="rootContainer" spacing="20"
           style="-fx-background-color: #F8FAFC; -fx-padding: 30;">
 
-        <!-- CONTEÚDO -->
         <HBox spacing="30" VBox.vgrow="ALWAYS">
 
             <!-- FORMULÁRIO -->
             <VBox spacing="25" styleClass="form-card" HBox.hgrow="ALWAYS">
 
-                <!-- HEADER CARD -->
                 <HBox alignment="CENTER_LEFT" spacing="10">
-                    <FontIcon iconLiteral="bi-box" iconColor="#081B5F" iconSize="22"/>
-                    <Label text="Precificar Produto" styleClass="form-card-title"/>
+                    <FontIcon iconLiteral="bi-pencil-square" iconColor="#081B5F" iconSize="22"/>
+                    <Label text="Editar Produto Comprado" styleClass="form-card-title"/>
                 </HBox>
 
                 <!-- DADOS PRODUTO -->
                 <VBox spacing="20">
                     <Label text="Dados do Produto" styleClass="section-title"/>
-
                     <GridPane hgap="20" vgap="18">
                         <columnConstraints>
                             <ColumnConstraints percentWidth="50"/>
@@ -58,13 +55,11 @@
                 <!-- CUSTOS FIXOS -->
                 <VBox spacing="20">
                     <Label text="Custos Totais (Kz)" styleClass="section-title"/>
-
                     <GridPane hgap="20" vgap="16">
                         <columnConstraints>
                             <ColumnConstraints percentWidth="50"/>
                             <ColumnConstraints percentWidth="50"/>
                         </columnConstraints>
-
                         <VBox spacing="6" GridPane.columnIndex="0">
                             <Label text="Custo de compra" styleClass="input-label"/>
                             <TextField fx:id="txtCompra" text="0,00" styleClass="custom-text-field"/>
@@ -81,11 +76,10 @@
                             <Label text="Energia" styleClass="input-label"/>
                             <TextField fx:id="txtEnergia" text="0,00" styleClass="custom-text-field"/>
                         </VBox>
-
                     </GridPane>
                 </VBox>
 
-                <!-- CUSTOS DINÂMICOS (adicionáveis) -->
+                <!-- CUSTOS DINÂMICOS -->
                 <VBox spacing="10">
                     <Separator/>
                     <HBox alignment="CENTER_LEFT" spacing="10">
@@ -100,25 +94,25 @@
                     <HBox alignment="CENTER_LEFT">
                         <Label text="Lucro desejado (%)" styleClass="section-title"/>
                         <Region HBox.hgrow="ALWAYS"/>
-                        <Label fx:id="lblLucroPercentual" text="15%" styleClass="profit-percent"/>
+                        <Label fx:id="lblLucroPercentual" text="45%" styleClass="profit-percent"/>
                     </HBox>
-                    <Slider fx:id="sliderLucro" min="0" max="25" value="15"/>
+                    <Slider fx:id="sliderLucro" min="0" max="100" value="45"/>
                 </VBox>
 
-                <!-- NAVEGAÇÃO -->
+                <!-- BOTÕES -->
                 <HBox alignment="CENTER_RIGHT" spacing="15">
-                    <Button fx:id="btnAnterior" onAction="#aoClicarAnterior" text="Anterior" styleClass="nav-button-secondary">
-                        <graphic>
-                            <FontIcon iconLiteral="bi-arrow-left" iconColor="#475569" iconSize="14"/>
-                        </graphic>
+                    <Button fx:id="btnAnterior" onAction="#voltarParaListagem" text="Anterior" styleClass="nav-button-secondary">
+                        <graphic><FontIcon iconLiteral="bi-arrow-left" iconColor="#475569" iconSize="14"/></graphic>
+                    </Button>
+                    <Button fx:id="btnAtualizar" onAction="#atualizarProduto" text="Atualizar Produto" styleClass="save-button">
+                        <graphic><FontIcon iconLiteral="bi-check-circle" iconColor="white" iconSize="14"/></graphic>
                     </Button>
                 </HBox>
             </VBox>
 
-            <!-- RESULTADO -->
+            <!-- RESULTADO (FIXO) -->
             <VBox prefWidth="350" spacing="25" styleClass="result-card">
                 <Label text="Resultado" styleClass="result-title"/>
-
                 <VBox spacing="18">
                     <VBox spacing="5">
                         <Label text="Preço mínimo" styleClass="result-label"/>
@@ -137,9 +131,7 @@
                         <Label fx:id="lblMargemLucro" text="45%" styleClass="result-value"/>
                     </VBox>
                 </VBox>
-
                 <Region VBox.vgrow="ALWAYS"/>
-                <Button fx:id="btnSeguinte" onAction="#aoClicarSeguinte" text="+ Salvar Produto" maxWidth="Infinity" styleClass="save-button"/>
             </VBox>
         </HBox>
     </VBox>

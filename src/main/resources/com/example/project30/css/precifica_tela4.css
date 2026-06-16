@@ -98,6 +98,7 @@
     -fx-font-weight: bold;
     -fx-padding: 10px 22px;
     -fx-background-radius: 8px;
+    -fx-min-width: 400px;
     -fx-cursor: hand;
     -fx-effect: dropshadow(gaussian, rgba(8, 27, 95, 0.2), 4, 0, 0, 1);
 }

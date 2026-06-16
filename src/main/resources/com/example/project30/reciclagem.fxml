@@ -10,7 +10,7 @@
 <?import javafx.scene.layout.StackPane?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox spacing="25" style="-fx-background-color: #f8fafc;" stylesheets="@css/produto_total.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.ProdutoController" VBox.vgrow="ALWAYS">
+<VBox spacing="25" style="-fx-background-color: #f8fafc;" stylesheets="@css/produto_total.css" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.project30.Reciclagem" VBox.vgrow="ALWAYS">
 
     <VBox spacing="5" styleClass="header-banner">
         <padding>
@@ -26,8 +26,8 @@
                     </StackPane>
                     <VBox spacing="2">
                         <children>
-                            <Label styleClass="header-title" text="Sistema de Precificação Baseado em Custos" />
-                            <Label styleClass="header-subtitle" text="Cadastre seus produtos, defina preço dos itens e economize seu tempo." />
+                            <Label styleClass="header-title" text="Reciclagem de Produtos" />
+                            <Label styleClass="header-subtitle" text="Restaura produtos que foram excluídos ou remova-os permanentemente." />
                         </children>
                     </VBox>
                 </children>
@@ -52,56 +52,8 @@
                             </StackPane>
                             <VBox alignment="CENTER_LEFT">
                                 <children>
-                                    <Label styleClass="card-label" text="Total de Produtos" />
-                                    <Label fx:id="totalProdutos" styleClass="card-number" text="0" />
-                                </children>
-                            </VBox>
-                        </children>
-                    </HBox>
-
-                    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="card" HBox.hgrow="ALWAYS">
-                        <children>
-                            <StackPane styleClass="card-badge, badge-green">
-                                <children>
-                                    <Label styleClass="badge-text" text="Kz" />
-                                </children>
-                            </StackPane>
-                            <VBox alignment="CENTER_LEFT">
-                                <children>
-                                    <Label styleClass="card-label" text="Custo Total" />
-                                    <Label fx:id="custoTotal" styleClass="card-number" text="0,00 Kz" />
-                                </children>
-                            </VBox>
-                        </children>
-                    </HBox>
-
-                    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="card" HBox.hgrow="ALWAYS">
-                        <children>
-                            <StackPane styleClass="card-badge, badge-blue">
-                                <children>
-                                    <Label styleClass="badge-text" text="Kz" />
-                                </children>
-                            </StackPane>
-                            <VBox alignment="CENTER_LEFT">
-                                <children>
-                                    <Label styleClass="card-label" text="Total de preço de venda" />
-                                    <Label fx:id="vendaTotal" styleClass="card-number" text="0,00 Kz" />
-                                </children>
-                            </VBox>
-                        </children>
-                    </HBox>
-
-                    <HBox alignment="CENTER_LEFT" spacing="12" styleClass="card" HBox.hgrow="ALWAYS">
-                        <children>
-                            <StackPane styleClass="card-badge, badge-green">
-                                <children>
-                                    <Label styleClass="badge-text" text="\%" />
-                                </children>
-                            </StackPane>
-                            <VBox alignment="CENTER_LEFT">
-                                <children>
-                                    <Label styleClass="card-label" text="Lucro Total" />
-                                    <Label fx:id="lucroTotal" styleClass="card-number" text="0,00 Kz" />
+                                    <Label styleClass="card-label" text="Total de Produtos Excluídos" />
+                                    <Label fx:id="totalExcluidos" styleClass="card-number" text="0" />
                                 </children>
                             </VBox>
                         </children>
@@ -111,10 +63,10 @@
 
             <VBox spacing="8" styleClass="search-container">
                 <children>
-                    <Label styleClass="section-title" text="Filtrar Catálogo" />
+                    <Label styleClass="section-title" text="Filtrar Produtos Excluídos" />
                     <HBox alignment="CENTER_LEFT" spacing="12">
                         <children>
-                            <TextField fx:id="nomeProduto" promptText="Digite o nome do produto para pesquisar..." styleClass="form-input" HBox.hgrow="ALWAYS" />
+                            <TextField fx:id="nomeProduto" promptText="Digite o nome do produto..." styleClass="form-input" HBox.hgrow="ALWAYS" />
                             <Button onAction="#pesquisarProduto" mnemonicParsing="false" prefHeight="38.0" prefWidth="140.0" styleClass="btn-search-css" text="Pesquisar" />
                         </children>
                     </HBox>
@@ -131,7 +83,7 @@
                             <TableColumn prefWidth="130.0" text="Preço de venda (Kz)" fx:id="colVenda" />
                             <TableColumn prefWidth="120.0" text="Margem (%)" fx:id="colMargem" />
                             <TableColumn prefWidth="140.0" text="Lucro Líquido (Kz)" fx:id="colLucro" />
-                            <TableColumn prefWidth="120.0" text="Ações" fx:id="colAcoes" />
+                            <TableColumn prefWidth="140.0" text="Ações" fx:id="colAcoes" />
                         </columns>
                         <columnResizePolicy>
                             <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
